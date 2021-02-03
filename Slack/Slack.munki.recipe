@@ -43,6 +43,20 @@ This recipe is based on com.github.killahquam.munki.slack and customized by wyco
 			<string>Slack</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+            <string>#!/bin/bash
+# Check for existing users except generic user "Shared"
+for USER in `ls -1 /Users | sed -e '/Shared/d' -e '/^\./d'`
+    do
+    echo Processing $USER
+    SLACK-PLIST='/Users/$USER/Library/Preferences/com.tinyspeck.slackmacgap.plist'
+    if [ -f "${SLACK-PLIST}" ]; then
+       sudo -u ${USER} defaults write "${SLACK-PLIST}" SlackNoAutoUpdates -bool YES
+       echo Suppressed Slack AutoUpdate
+    fi
+done            
+exit 0          
+            		</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
