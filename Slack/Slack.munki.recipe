@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest &apos;Slack&apos; and imports into Munki.
+	<string>Downloads the latest 'Slack' and imports it into Munki.
 	
 This recipe is based on com.github.killahquam.munki.slack and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.
 	</string>
@@ -11,10 +11,10 @@ This recipe is based on com.github.killahquam.munki.slack and customized by wyco
 	<string>com.github.wycomco.override.slack</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>app_slack</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>generic/apps/slack</string>
+		<key>NAME</key>
+		<string>app_slack</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -25,10 +25,12 @@ This recipe is based on com.github.killahquam.munki.slack and customized by wyco
 			<string>Social Media</string>
 			<key>description</key>
 			<string>Slack is a cloud-based set of proprietary team collaboration tools and services, founded by Stewart Butterfield. Slack began as an internal tool used by their company, Tiny Speck, in the development of Glitch, a now defunct online game.</string>
+			<key>developer</key>
+			<string>Slack</string>
+			<key>display_name</key>
+			<string>Slack</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -36,27 +38,25 @@ This recipe is based on com.github.killahquam.munki.slack and customized by wyco
 					<key>description</key>
 					<string>Slack ist ein webbasierter Instant-Messaging-Dienst des US-amerikanischen Unternehmens Slack Technologies zur Kommunikation innerhalb von Arbeitsgruppen.</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-			<key>display_name</key>
-			<string>Slack</string>
-			<key>developer</key>
-			<string>Slack</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>postinstall_script</key>
-            <string>#!/bin/bash
+			<string>#!/bin/bash
 # Check for existing users except generic user "Shared"
-for USER in `ls -1 /Users | sed -e '/Shared/d' -e '/^\./d'`
-    do
+for USER in `find /Users -type d -mindepth 1 -maxdepth 1 -not -path '*/\.*' -not -path '*/Shared' -not -path '*/Deleted Users' | cut -d/ -f3-`
+do
     echo Processing $USER
     SLACK-PLIST='/Users/$USER/Library/Preferences/com.tinyspeck.slackmacgap.plist'
     if [ -f "${SLACK-PLIST}" ]; then
        sudo -u ${USER} defaults write "${SLACK-PLIST}" SlackNoAutoUpdates -bool YES
        echo Suppressed Slack AutoUpdate
     fi
-done            
-exit 0          
-            		</string>
+done
+exit 0
+</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
