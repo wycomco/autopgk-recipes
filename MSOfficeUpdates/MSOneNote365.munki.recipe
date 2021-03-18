@@ -53,6 +53,7 @@
             <string>Microsoft OneNote</string>
             <key>name</key>
             <string>%NAME%</string>
+            <key>postinstall_script</key>
             <string>#!/bin/sh
 if [ -d "/Library/Application Support/Microsoft/MAU2.0" ]; then
    launchctl remove com.microsoft.autoupdate.helper
