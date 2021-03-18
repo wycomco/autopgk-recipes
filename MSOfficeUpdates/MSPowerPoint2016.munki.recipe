@@ -87,13 +87,14 @@ This recipe is based on com.github.autopkg.munki.MSPowerPoint2016 and customized
 			<key>maximum_os_version</key>
 			<string>10.14.6</string>
 		 	<key>postinstall_script</key>
-                        <string>#!/bin/sh
-
+            <string>#!/bin/sh
 if [ -d "/Library/Application Support/Microsoft/MAU2.0" ]; then
-   rm -rf /Library/Application\ Support/Microsoft/MAU2.0/
    launchctl remove com.microsoft.autoupdate.helper
+   launchctl remove com.microsoft.update.agent
    rm -f /Library/PrivilegedHelperTools/com.microsoft.autoupdate.helper
+   rm -f /Library/LaunchAgents/com.microsoft.update.agent.plist
    rm -f /Library/LaunchDaemons/com.microsoft.autoupdate.helper.plist
+   rm -rf /Library/Application\ Support/Microsoft/MAU2.0/
    echo "Removed Microsoft AutoUpdate"
 fi
 
