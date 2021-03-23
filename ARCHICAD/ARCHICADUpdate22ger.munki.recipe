@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads and imports the latest update build of ARCHICAD 21 GER into munki based on the override-able parameters:  MAJOR_VERSION, LOCALIZATION, RELEASE_TYPE and INSTALL_DIR.
+
+MAJOR_VERSION = 22
+LOCALIZATION = GER
+RELEASE_TYPE = AC (for full version)
+
+INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 22 DE/
+</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.ARCHICADUpdate22ger</string>
+	<key>Input</key>
+	<dict>
+		<key>INSTALL_DIR</key>
+		<string>/Applications/GRAPHISOFT/ARCHICAD %MAJOR_VERSION% DE</string>
+		<key>LOCALIZATION</key>
+		<string>GER</string>
+		<key>MAJOR_VERSION</key>
+		<string>21</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/graphisoft/archicad%MAJOR_VERSION%_%LOCALIZATION%</string>
+		<key>NAME</key>
+		<string>upd_archicad%MAJOR_VERSION%_%LOCALIZATION%</string>
+		<key>RELEASE_TYPE</key>
+		<string>AC</string>
+		<key>UPDATE_FOR</key>
+		<string>app_archicad22ger</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing_archicad_updates</string>
+			</array>
+			<key>category</key>
+			<string>Graphics and Design</string>
+			<key>description</key>
+			<string>ARCHICAD is an architectural BIM CAD software for Macintosh and Windows developed by the Hungarian company Graphisoft. ARCHICAD offers computer aided solutions for handling all common aspects of aesthetics and engineering during the whole design process of the built environment — buildings, interiors, urban areas, etc. </string>
+			<key>developer</key>
+			<string>GRAPHISOFT</string>
+			<key>icon_name</key>
+			<string>app_archicad%MAJOR_VERSION%.png</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Grafik und Design</string>
+					<key>description</key>
+					<string>ARCHICAD 22 – Rundum BIM Erleben Sie freies Gestalten, umfassender und effizienter als je zuvor. ARCHICAD 21 wartet mit verbesserten Planungswerkzeugen auf. Es bietet große Erleichterungen im Planungsprozess. Das alles mit spürbar mehr Performance und optimierten multidisziplinären Workflows. So sollte BIM sein.</string>
+					<key>preinstall_alert</key>
+					<dict>
+						<key>alert_detail</key>
+						<string>ARCHICAD aktualisiert beim Speichern die Projektdateien! Das ARCHICAD Update muss immer bei allen Mitgleidern eines Teams gleichzeitig installiert werden.
+Mitglieder ohne Update können die Projektdateien nicht mehr öffnen!
+</string>
+						<key>alert_title</key>
+						<string>Teamweise update durchführen!</string>
+						<key>cancel_label</key>
+						<string>Abbrechen</string>
+						<key>ok_label</key>
+						<string>OK</string>
+					</dict>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
+			<key>preinstall_alert</key>
+			<dict>
+				<key>alert_detail</key>
+				<string>ARCHICAD will update project files during save. The ARCHICAD update has to be installed for all team members at the same time.
+Team members without the update will no longer be able to open project files!
+</string>
+				<key>alert_title</key>
+				<string>Install Update in Project Teams</string>
+				<key>cancel_label</key>
+				<string>Cancel</string>
+				<key>ok_label</key>
+				<string>OK</string>
+			</dict>
+			<key>installer_type</key>
+			<string>copy_from_dmg</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.wycomco.munki.ARCHICADUpdate</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>ARCHICADUpdatesProcessor</key>
+			<dict>
+				<key>git_hash</key>
+				<string>13c19fc1408d66f6e3fac0541f77eb9b245a92f4</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/archicad_updates/ARCHICADUpdatesProcessor.py</string>
+				<key>sha256_hash</key>
+				<string>a52a675df32d97f31840c23959119384f38b5af60366a8d20cf89ba809bbac3e</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.wycomco.download.ARCHICADUpdate</key>
+			<dict>
+				<key>git_hash</key>
+				<string>40a6c455cbaaf17ca8901e62cc05534deed14be3</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/archicad_updates/ARCHICADUpdate.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>67cbfaa918a115ad833fb6227cf0669472244c6758e04d582c6ba0acc22595e6</string>
+			</dict>
+			<key>com.github.wycomco.munki.ARCHICADUpdate</key>
+			<dict>
+				<key>git_hash</key>
+				<string>40a6c455cbaaf17ca8901e62cc05534deed14be3</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/archicad_updates/ARCHICADUpdate.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>5a957382a97e6576dc6056b15c2151ba47cfe34e0959ce5dc9f0d1c1989af508</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
