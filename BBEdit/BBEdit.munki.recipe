@@ -6,7 +6,7 @@
     <string>Downloads the current installation package for BBEdit. Imports it
 into Munki, adding a postinstall_script that installs the command-line tools.
 
-This recipe is based on com.github.autopkg.munki.bbedit and customized by wycomco (http://www.wycomco.de)
+This recipe is based on com.github.autopkg.munki.bbedit and customized by wycomco (https://www.wycomco.de)
 to support a different naming convention for munki and German as a default language.</string>
     <key>Identifier</key>
     <string>com.github.wycomco.override.bbedit</string>

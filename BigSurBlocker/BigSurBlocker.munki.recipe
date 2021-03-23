@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest version of Big Sur Blocker and imports into a Munki repo. This recipe is based on io.github.hjuutilainen.munki.BigSurBlocker and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.BigSurBlocker</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_CATEGORY</key>
+		<string>Utilities</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/bigsur_blocker</string>
+		<key>NAME</key>
+		<string>app_bigsur_blocker</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array/>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>description</key>
+			<string>Detect when "Install macOS Big Sur.app" installer application has launched, terminate the process and display an alert.</string>
+			<key>developer</key>
+			<string>Hannes Juutilainen</string>
+			<key>display_name</key>
+			<string>Big Sur Blocker</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+					<key>description</key>
+					<string>Erkennt, wenn der Installer für Big Sur gestartet wird, beendet diesen Prozess und zeigt eine Fehlermeldung an.</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
+			<key>maximum_os_version</key>
+			<string>10.15.99</string>
+			<key>minimum_os_version</key>
+			<string>10.12</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+			<key>uninstall_method</key>
+			<string>uninstall_script</string>
+			<key>uninstall_script</key>
+			<string>#!/bin/bash
+
+current_user_uid=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/UID :/ &amp;&amp; ! /loginwindow/ { print $3 }' )
+
+launchd_item_path="/Library/LaunchAgents/com.hjuutilainen.bigsurblocker.plist"
+launchctl bootout gui/${current_user_uid} "${launchd_item_path}"
+
+rm -f /Library/LaunchAgents/com.hjuutilainen.bigsurblocker.plist
+rm -f /usr/local/bin/bigsurblocker
+
+pkgutil --forget com.hjuutilainen.bigsurblocker
+
+exit 0
+</string>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>io.github.hjuutilainen.munki.BigSurBlocker</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>io.github.hjuutilainen.download.BigSurBlocker</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c295fb043317811c7975284ee2c2ebea42d3430c</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/Hannes Juutilainen/BigSurBlocker.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>6a81db6dd52fdb24a4bb424e4e0104b6f42c15be4dd0086caa6715bbd91dd424</string>
+			</dict>
+			<key>io.github.hjuutilainen.munki.BigSurBlocker</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c295fb043317811c7975284ee2c2ebea42d3430c</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/Hannes Juutilainen/BigSurBlocker.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>57407f8785852b9d458867670a5a5f7ea68efefd84e23d5b899595cc276c85e4</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

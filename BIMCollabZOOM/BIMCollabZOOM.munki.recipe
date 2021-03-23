@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Munki process and import recipe for Kubus' BIMcollab ZOOM.  This recipe is based on com.github.wycomco.munki.bimcollab_zoom and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.bimcollab_zoom</string>
+	<key>Input</key>
+	<dict>
+		<key>APPLICATIONS_PATH</key>
+		<string>/Applications</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/BIMCollabZoom</string>
+		<key>NAME</key>
+		<string>app_bimcollab_zoom</string>
+		<key>PKGPAYLOAD_DIR</key>
+		<string>pkgpayload</string>
+		<key>PKGROOT_DIR</key>
+		<string>pkgroot</string>
+		<key>RELATIVE_APP_PATH</key>
+		<string>%APPLICATIONS_PATH%/BIMcollab ZOOM/BIMcollab ZOOM.app</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Graphics and Design</string>
+			<key>description</key>
+			<string>The world's most intuitive model validation and clash detection tool
+
+BIMcollab ZOOM brings IFC model viewing and validating fully integrated into the issue management workflow. ZOOM is the perfect tool to discuss issues in design review meetings, helps to analyse data to find design flaws and to verify solutions. Navigation is fast, intuitive and smooth, even with large models. Now with clash detection!</string>
+			<key>developer</key>
+			<string>Kubus</string>
+			<key>display_name</key>
+			<string>BIMcollab ZOOM</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Grafik und Design</string>
+					<key>description</key>
+					<string>Das weltweit intuitivste Tool zur Modellvalidierung und Kollisionserkennung
+
+Mit BIMcollab ZOOM wird die Anzeige und Validierung von IFC-Modellen vollständig in den BIMcollab-Workflow integriert. ZOOM eignet sich optimal zur Besprechung von Issues in Sitzungen von allen Fachplanern. ZOOM hilft bei der Datenanalyse, um Fachplanungsmängel zu bestimmen und Lösungen zu prüfen. Die Navigation ist selbst bei großen Modellen schnell, intuitiv und reibungslos. Jetzt mit Kollisionserkennung!</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
+			<key>minimum_os_version</key>
+			<string>10.12</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+			<key>uninstall_method</key>
+			<string>uninstall_script</string>
+			<key>uninstall_script</key>
+			<string>#!/bin/sh
+# find and delete any BIMcollab ZOOM Installation
+# preinstall script from the original package.
+rm -rf "/Applications/BIMcollab ZOOM/"
+</string>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.wycomco.munki.bimcollab_zoom</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>com.github.homebysix.FindAndReplace/FindAndReplace</key>
+			<dict>
+				<key>git_hash</key>
+				<string>b9c1484128d1f5308bb66dcc4ca9e1be3536b0fc</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/FindAndReplace/FindAndReplace.py</string>
+				<key>sha256_hash</key>
+				<string>cf89378251379b98005e16119d69abe798f54150139645934a040689cd9213e6</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.wycomco.download.bimcollab_zoom</key>
+			<dict>
+				<key>git_hash</key>
+				<string>05f4c8c7f81f07a5d145be7728982fc6f1032964</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/bimcollab_zoom/BIMcollabZOOM.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>31c21025379cca4d0de61fd241a5ab2b9156d72c3f42d8fa67922e1998933830</string>
+			</dict>
+			<key>com.github.wycomco.munki.bimcollab_zoom</key>
+			<dict>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/bimcollab_zoom/BIMCollabZOOM.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>e1616f45382bcd53244e921508b449f6d4e544f6fbfb7f082e4ccaf76bf7de58</string>
+			</dict>
+			<key>com.github.wycomco.pkg.bimcollab_zoom</key>
+			<dict>
+				<key>git_hash</key>
+				<string>05f4c8c7f81f07a5d145be7728982fc6f1032964</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/bimcollab_zoom/BIMcollabZOOM.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>63a29a5d64f2880deed2c29a565ba2fd4be5fbc2bf582ac233417b663dd804f7</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

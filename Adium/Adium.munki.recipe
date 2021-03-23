@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest version of Adium and imports into a Munki repo. This recipe is based on com.github.autopkg.munki.Adium and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<string>Downloads latest version of Adium and imports into a Munki repo. This recipe is based on com.github.autopkg.munki.Adium and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
 	<string>com.github.wycomco.override.Adium</string>
 	<key>Input</key>

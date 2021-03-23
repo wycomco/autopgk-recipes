@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of Spectacle and imports it into Munki. This recipe is based on com.github.jaharmi.munki.Spectacle and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.Spectacle</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/spectacle</string>
+		<key>NAME</key>
+		<string>app_spectacle</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>description</key>
+			<string>Window manager with simple keyboard navigation. The installation must be done by a wycomco employee.</string>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Fenstermanager mit einfacher Tastatursteuerung. Die Installation bedingt einen Vor-Ort-Termin eines wycomco-Technikers.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>Eric Czarny</string>
+			<key>display_name</key>
+			<string>Spectacle</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.jaharmi.munki.Spectacle</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.jaharmi.download.Spectacle</key>
+			<dict>
+				<key>git_hash</key>
+				<string>06a90b3400bb3a8e6672330c10c775b402c18889</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.jaharmi-recipes/ECzarny/Spectacle.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>f6ddcdbdf72e7af3e15ab6f867f7e47931a9688d60822e5dbec867b4088f4687</string>
+			</dict>
+			<key>com.github.jaharmi.munki.Spectacle</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8731796cf636ad4beb9c6f9976c566f92e7ad138</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.jaharmi-recipes/ECzarny/Spectacle.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>9ae92361a44084beb482cd3bc2f3d635f0a07351a6753b734d19ca25d736d7e7</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

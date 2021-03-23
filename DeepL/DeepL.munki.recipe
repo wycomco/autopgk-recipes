@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest DeepL disk image and imports into Munki. This recipe is based on com.github.wycomco.munki.deepl and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.deepl</string>
+	<key>Input</key>
+	<dict>
+        <key>NAME</key>
+        <string>app_deepl</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/deepl</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>Use the free DeepL Translator to translate your texts with the best machine translation available, powered by DeepL's world-leading neural network technology.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Verwenden Sie den kostenlosen DeepL-Übersetzer, um Ihre Texte mit der besten verfügbaren maschinellen Übersetzung zu übersetzen, die auf der weltweit führenden neuronalen Netzwerktechnologie von DeepL basiert.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>DeepL GmbH</string>
+			<key>display_name</key>
+			<string>DeepL</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.wycomco.munki.deepl</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.andredb90.download.DeepL</key>
+			<dict>
+				<key>git_hash</key>
+				<string>46e05d342576ff3b86372048940d5c011569aad8</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.andredb90-recipes/DeepL/DeepL.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>316865143277514ae01ed8989599584b44b15a8534ac3db6898dc9a9d4f669bb</string>
+			</dict>
+			<key>com.github.wycomco.munki.deepl</key>
+			<dict>
+				<key>git_hash</key>
+				<string>ec6e0ed723a566d1b4a547ffe15d3bc932d8c116</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/DeepL/DeepL.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>a814b4360e8271bde9a2ee15b7fa5303c52d6ee26bc6208d420017dd3c51aaf6</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

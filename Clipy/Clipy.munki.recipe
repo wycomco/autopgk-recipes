@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release of AutoDMG from Github and imports into Munki. This recipe is based on com.github.wardsparadox.munki.Clipy and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
+    </string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.Clipy</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/clipy</string>
+        <key>NAME</key>
+        <string>app_clipy</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catagory</key>
+			<string>Utilities</string>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>description</key>
+            <string>Clipy is a Clipboard extension app for macOS enabling you to store multiple clips.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+					<key>description</key>
+					<string>Clipy ist eine Erweiterung der Zwischenablage, die es einem mittels einer Historie ermöglicht, mehrere Clips abzurufen.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>Clipy Project</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.wardsparadox.munki.Clipy</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.wardsparadox.download.Clipy</key>
+			<dict>
+				<key>git_hash</key>
+				<string>22ac5796a2b042c19f084ca235d2cb87d4454e22</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wardsparadox-recipes/Clipy/Clipy.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>e7589887580a1456ce1dbad95de31573491f5ce6f7d09dcc912c143e4b4b90cc</string>
+			</dict>
+			<key>com.github.wardsparadox.munki.Clipy</key>
+			<dict>
+				<key>git_hash</key>
+				<string>77c3bf9529d8b39bcf68807dc4639cfe4a6cfd7a</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wardsparadox-recipes/Clipy/Clipy.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>9e1e34059f49c7d9b30fbd077abb347dace12bc09fef89ccfe901396d43a35e7</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

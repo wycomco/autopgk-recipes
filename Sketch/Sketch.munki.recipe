@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest version of Sketch and imports it into Munki. This recipe is based on com.github.foigus.munki.Sketch and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
+	</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.Sketch</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/bohemiancoding</string>
+		<key>NAME</key>
+		<string>app_sketch</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Graphics and design</string>
+			<key>description</key>
+			<string>Sketch gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use package. Finally you can focus on what you do best: Design.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>Sketch bietet Ihnen die Leistung, Flexibilität und Geschwindigkeit, die Sie sich immer gewünscht haben, in einem leichten und benutzerfreundlichen Paket. Endlich können Sie sich auf das konzentrieren, was Sie am besten können: Entwerfen.</string>
+					<key>category</key>
+					<string>Grafik und Design</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>Bohemian Coding</string>
+			<key>display_name</key>
+			<string>Sketch</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.foigus.munki.Sketch</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.foigus.download.Sketch</key>
+			<dict>
+				<key>git_hash</key>
+				<string>772bdd3b49459735862e7002d9364fe2b8f95362</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.foigus-recipes/BohemianCoding/Sketch.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>9b3711e59d78e5a41eded024de0c12b684b6ccd3d6746a170ee1513150badd4c</string>
+			</dict>
+			<key>com.github.foigus.munki.Sketch</key>
+			<dict>
+				<key>git_hash</key>
+				<string>772bdd3b49459735862e7002d9364fe2b8f95362</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.foigus-recipes/BohemianCoding/Sketch.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>1f448e096354622e5d7a113292db9fb55d87154aa26810a0e4760e4ee0314cef</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
