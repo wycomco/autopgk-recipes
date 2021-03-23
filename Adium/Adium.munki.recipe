@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest version of Adium and imports into a Munki repo. This recipe is based on com.github.autopkg.munki.Adium and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.Adium</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/adium</string>
+		<key>NAME</key>
+		<string>app_adium</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Social Media</string>
+			<key>description</key>
+			<string>Adium is a free instant messaging application for Mac OS X that can connect to AIM, MSN, Jabber, Yahoo, and more.</string>
+			<key>display_name</key>
+			<string>Adium</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Soziale Netze</string>
+					<key>description</key>
+					<string>Adium ist ein kostenloses Instant-Messaging-Programm für macOS, das eine Verbindung zu AIM, MSN, Jabber, Yahoo und anderen herstellen kann.</string>
+				</dict>
+			</dict>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.Adium</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.Adium</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c340582a0126573e2df7ac0ad422f2b697165cbe</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/Adium/Adium.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>a113f1afeedf7a297d06fdeb2ba3d5247610762bf9cf44d7ae8372b2ad55560d</string>
+			</dict>
+			<key>com.github.autopkg.munki.Adium</key>
+			<dict>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/Adium/adium.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>00b8795f9875d1ce6d2a23746b1269c33862679a0a42122427f76626cfc6917d</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
