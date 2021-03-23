@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+	<string>Downloads the current release version of GrandPerspective and imports into Munki. This recipe is based on com.github.wardsparadox.munki.googledrivefs and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.googledrivefs</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/google/drivefs</string>
+        <key>NAME</key>
+        <string>app_googledrivefs</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>File Sharing</string>
+			<key>description</key>
+			<string>Drive File Stream lets you:
+• Access, search and manage files on-demand from your computer in seconds.
+• Get just the files you need and make certain files available for offline use later.
+• Access your work even quicker, as your most-used files become available in the background intelligently.
+• Avoid the risk of users downloading all of your company data to their hard drives.</string>
+			<key>developer</key>
+			<string>Google</string>
+			<key>display_name</key>
+			<string>Google Drive FileStream</string>
+			<key>name</key>
+			<string>%NAME%</string>
+            <key>category</key>
+            <string>Utilities</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>Drive File Stream ermöglicht dir:
+• Zugriff, Suche und Verwaltung von Dateien auf Google Drive in Sekundenschnelle.
+• Beziehe nur die Dateien, die du brauchst und stelle gewisse Dateien für die Offlinebearbeitung später bereit.
+• Greife auf deine Arbeit sogar noch schneller zu, da deine am häufigsten verwendeten Dateien im Hintergrund bereitgestellt werden.
+• Vermeide das Risiko, dass Benutzer alle Firmendaten komplett herunterladen.</string>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+				</dict>
+			</dict>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.wardsparadox.munki.googledrivefs</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.wardsparadox.download.googledrivefs</key>
+			<dict>
+				<key>git_hash</key>
+				<string>1152ac0fcbdca618dafec7d542fc2ea4bd6b0411</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wardsparadox-recipes/Google Drive FileStream/DriveFS.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>b9c926132fd519d91e3140e9f78266a586035ad97770528d71219631f5f25a5f</string>
+			</dict>
+			<key>com.github.wardsparadox.munki.googledrivefs</key>
+			<dict>
+				<key>git_hash</key>
+				<string>2d5406676748c3c48465ce1716ac5d1e92e398f6</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wardsparadox-recipes/Google Drive FileStream/DriveFS.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>c8cd1108b4c759401040149c45df3d8052ead64ffcdf01cb7415b12e95ec3037</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of FreeFileSync, builds a package and imports it to Munki. This recipe is based on com.github.dataJAR-recipes.munki.freefilesync and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.freefilesync</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>app_freefilesync</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/freefilesync</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>FreeFileSync is a free Open Source software that helps you synchronize files and synchronize folders for Windows, Linux and Mac OS X. It is designed to save your time setting up and running backup jobs while having nice visual feedback along the way.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+					<key>description</key>
+					<string>FreeFileSync ist eine kostenlose Open-Source-Software, mit der Sie Dateien synchronisieren und Ordner für Windows, Linux und macOS synchronisieren können. Sie sparen Zeit beim Einrichten und Ausführen von Sicherungsjobs und erhalten dabei ein nettes visuelles Feedback.</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
+			<key>developer</key>
+			<string>Zenju</string>
+			<key>display_name</key>
+			<string>FreeFileSync</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+			<key>uninstallable</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.dataJAR-recipes.munki.freefilesync</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.dataJAR-recipes.download.freefilesync</key>
+			<dict>
+				<key>git_hash</key>
+				<string>e7a88ac15ca88f6a5999e7e2a78f392e60247ea7</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/FreeFileSync/FreeFileSync.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>f12b3aac3bef4ad3b491498e5aebe086df02578a46359427688794366f70ed3b</string>
+			</dict>
+			<key>com.github.dataJAR-recipes.munki.freefilesync</key>
+			<dict>
+				<key>git_hash</key>
+				<string>93748ae6dbc3ddebd082dfb3383047f498cd4a86</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/FreeFileSync/FreeFileSync.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>c69dcdf7a4d8e0577ff545d8418213556918ebc6047626b68bba6f991ac7c246</string>
+			</dict>
+			<key>com.github.dataJAR-recipes.pkg.freefilesync</key>
+			<dict>
+				<key>git_hash</key>
+				<string>92913dcf9c416014f659dd90af4eff213e5f8649</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/FreeFileSync/FreeFileSync.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>e296450da732622410a0f9e8cab416bb71e34499ef398e826d5cf188f63e1b0c</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

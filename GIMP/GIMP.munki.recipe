@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of GIMP from gimp.org and imports into Munki. This recipe is based on io.github.hjuutilainen.munki.GIMP and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.GIMP</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_CATEGORY</key>
+		<string>Graphics and design</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/gimp</string>
+		<key>NAME</key>
+		<string>GIMP</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>description</key>
+			<string>GIMP is the GNU Image Manipulation Program. It is a freely distributed piece of software for such tasks as photo retouching, image composition and image authoring. It works on many operating systems, in many languages.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>GIMP ist das GNU Image Manipulation Program. Es ist eine frei verteilte Software für Aufgaben wie Fotoretusche, Bildkomposition und Bildgestaltung. Es funktioniert auf vielen Betriebssystemen und in vielen Sprachen.</string>
+					<key>category</key>
+					<string>Grafik und Design</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>The GIMP Team</string>
+			<key>display_name</key>
+			<string>GIMP</string>
+			<key>name</key>
+			<string>app_gimp</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>io.github.hjuutilainen.munki.GIMP</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>io.github.hjuutilainen.download.GIMP</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c3a3992c984b168455643675d4673adcf3371ca5</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/GIMP/GIMP.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>967cc5b606654f2f6f06b1becb6f609f12cff4d45e0b27086bd6da7a3a6c8649</string>
+			</dict>
+			<key>io.github.hjuutilainen.munki.GIMP</key>
+			<dict>
+				<key>git_hash</key>
+				<string>e09a75af469430479b5cfac528064adeb914680d</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/GIMP/GIMP.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>ee4226269597369bc61b99daad4434ee8e4563d273d8401ce09916fbc98cc173</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
