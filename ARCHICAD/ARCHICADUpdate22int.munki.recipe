@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the latest update build of ARCHICAD 22 GER into munki based on the override-able parameters:  MAJOR_VERSION, LOCALIZATION, RELEASE_TYPE and INSTALL_DIR.
+	<string>Downloads and imports the latest update build of ARCHICAD 22 INT into munki based on the override-able parameters:  MAJOR_VERSION, LOCALIZATION, RELEASE_TYPE and INSTALL_DIR.
 
 MAJOR_VERSION = 22
-LOCALIZATION = GER
+LOCALIZATION = INT
 RELEASE_TYPE = AC (for full version)
 
-INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 22 DE/
+INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 22 EN/
 </string>
 	<key>Identifier</key>
-	<string>com.github.wycomco.override.ARCHICADUpdate22ger</string>
+	<string>com.github.wycomco.override.ARCHICADUpdate22int</string>
 	<key>Input</key>
 	<dict>
 		<key>INSTALL_DIR</key>
-		<string>/Applications/GRAPHISOFT/ARCHICAD %MAJOR_VERSION% DE</string>
+		<string>/Applications/GRAPHISOFT/ARCHICAD %MAJOR_VERSION% EN</string>
 		<key>LOCALIZATION</key>
-		<string>GER</string>
+		<string>INT</string>
 		<key>MAJOR_VERSION</key>
 		<string>22</string>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -28,7 +28,7 @@ INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 22 DE/
 		<key>RELEASE_TYPE</key>
 		<string>AC</string>
 		<key>UPDATE_FOR</key>
-		<string>app_archicad22ger</string>
+		<string>app_archicad22int</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
