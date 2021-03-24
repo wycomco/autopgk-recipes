@@ -79,7 +79,7 @@ ln -s "$3/Applications/$NAME ($build).app" "$3/Applications/GoToMeeting.app"
 			<key>Processor</key>
 			<string>MunkiPkginfoMerger</string>
 		</dict>
-		<dict>
+	</array>
 	<key>ParentRecipeTrustInfo</key>
 	<dict>
 		<key>non_core_processors</key>
