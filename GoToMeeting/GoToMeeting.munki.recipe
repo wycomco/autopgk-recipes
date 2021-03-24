@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of GoToMeeting and imports it into Munki.
+
+This recipe is based on com.github.homebysix.munki.GoToMeeting and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
+A postinstall_script which creates a symlink to the latest version of GoToMeeting has been added as well.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.gotomeeting</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/gotomeeting</string>
+		<key>NAME</key>
+		<string>GoToMeeting</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>Online meeting, desktop sharing, and video conferencing software.</string>
+			<key>developer</key>
+			<string>Citrix Systems, Inc.</string>
+			<key>display_name</key>
+			<string>GoToMeeting</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Software für Onlinemeetings, Desktop Sharing und Videokonferenzen.</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
+			<key>name</key>
+			<string>app_gotomeeting</string>
+			<key>preinstall_script</key>
+			<string>#!/bin/sh
+
+echo "Removing old copies of GoToMeeting from the /Applications folder..."
+rm -rf /Applications/GoToMeeting\ \(*\).app
+
+exit $?
+            </string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.munki.GoToMeeting</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>postinstall_script</key>
+					<string>#!/bin/bash
+NAME="%NAME%"
+build="%build%"
+
+rm -rf "$3/Applications/GoToMeeting.app"
+ln -s "$3/Applications/$NAME ($build).app" "$3/Applications/GoToMeeting.app"
+</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
+		<dict>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>GoToMeetingURLProvider</key>
+			<dict>
+				<key>git_hash</key>
+				<string>b9c1484128d1f5308bb66dcc4ca9e1be3536b0fc</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/GoToMeeting/GoToMeetingURLProvider.py</string>
+				<key>sha256_hash</key>
+				<string>06de83a8abd0def573810e7dbe3918d11b646cd599acc52f2694edd458c3cffa</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.homebysix.download.GoToMeeting</key>
+			<dict>
+				<key>git_hash</key>
+				<string>abd9c7d9c8764f87ef48acea70ebac41503362e8</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/GoToMeeting/GoToMeeting.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>8067df2b88eacdf72d2a836be5bb9b4883fb84b93edccfb64a70e23b80151d54</string>
+			</dict>
+			<key>com.github.homebysix.munki.GoToMeeting</key>
+			<dict>
+				<key>git_hash</key>
+				<string>abd9c7d9c8764f87ef48acea70ebac41503362e8</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/GoToMeeting/GoToMeeting.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>a6572b8e35fcafe28553eb207409f4b3e26f09d46dd2a98ab447264d7d71d931</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

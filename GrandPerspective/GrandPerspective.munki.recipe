@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release version of GrandPerspective and imports into Munki. This recipe is based on com.github.jessepeterson.munki.GrandPerspective and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.grandperspective</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/grandperspective</string>
+		<key>NAME</key>
+		<string>app_grandperspective</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>GrandPerspective is a utility application for Mac OS X that graphically displays the disk usage of a file system.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>GrandPerspective ist eine kleine Utility-Anwendung für Mac, die die Festplattennutzung in einem Dateisystem grafisch darstellt. Es kann Ihnen helfen, Ihre Festplatte zu verwalten, da Sie leicht erkennen können, welche Dateien und Ordner den meisten Speicherplatz beanspruchen. Es verwendet eine sogenannte Baumansicht zur Visualisierung. Jede Datei wird als Rechteck mit einer zur Dateigröße proportionalen Fläche angezeigt. Dateien in demselben Ordner werden zusammen angezeigt, ihre Platzierung ist jedoch beliebig.</string>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>Erwin Bonsma</string>
+			<key>display_name</key>
+			<string>GrandPerspective</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.munki.GrandPerspective</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider</key>
+			<dict>
+				<key>git_hash</key>
+				<string>fe01f703e84197531df684fb42ab7fb608ebae6c</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.jessepeterson-recipes/GrandPerspective/SourceForgeURLProvider.py</string>
+				<key>sha256_hash</key>
+				<string>978acaf1f0654cf99e9272d2649052a37f2e83b0c41d06e5df0ab01d7d97bf6d</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.homebysix.download.GrandPerspective</key>
+			<dict>
+				<key>git_hash</key>
+				<string>024161a468349549747ccd760060aed570079ae0</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/GrandPerspective/GrandPerspective.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>ee83fb56150087e50ee38464a381b119741c38279ec8829105c854459f6084bf</string>
+			</dict>
+			<key>com.github.homebysix.munki.GrandPerspective</key>
+			<dict>
+				<key>git_hash</key>
+				<string>630213c7240071dab0abe924fac3730be2b924a2</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/GrandPerspective/GrandPerspective.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>7b33a1cbb3fc0294c9c511f5a9680b415da67e51261daf617465559db60324d7</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
