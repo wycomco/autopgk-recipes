@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of GraphicConverter and imports it into Munki.
+
+The MAJOR_VERSION input variable can be overridden to select either version 10 (default) or version 9 of GraphicConverter.
+
+This recipe is based on com.github.homebysix.munki.GraphicConverter and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.GraphicConverter</string>
+	<key>Input</key>
+	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>11</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/lemkesoft</string>
+		<key>NAME</key>
+		<string>app_graphicconverter</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>description</key>
+			<string>GraphicConverter is the universal tool for displaying images in a browser, converting them to other formats and editing them. Drag a folder onto GraphicConverter 10 and sift through its images.</string>
+			<key>category</key>
+			<string>Graphics and design</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Grafik und Design</string>
+					<key>description</key>
+					<string>GraphicConverter ist das universelle Werkzeug, um Bilder in einem Browser anzuzeigen, im Format zu konvertieren und zu bearbeiten. Ziehen Sie einen Ordner auf GraphicConverter 10, und sichten Sie ihre Bilder.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>Thorsten Lemke</string>
+			<key>display_name</key>
+			<string>GraphicConverter</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.munki.GraphicConverter</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.homebysix.download.GraphicConverter</key>
+			<dict>
+				<key>git_hash</key>
+				<string>6c2c3ea7d2f3c576f515d991699dcfa723aa931c</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/LemkeSoft/GraphicConverter.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>157af4d1fda14b763068f2f4c079dc064898e7ee5ded9002247fa467943b9dac</string>
+			</dict>
+			<key>com.github.homebysix.munki.GraphicConverter</key>
+			<dict>
+				<key>git_hash</key>
+				<string>6c2c3ea7d2f3c576f515d991699dcfa723aa931c</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/LemkeSoft/GraphicConverter.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>a59b876c0f18a2172e33011ff45c1792018467b60456cce9dde72c0ea467c51d</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

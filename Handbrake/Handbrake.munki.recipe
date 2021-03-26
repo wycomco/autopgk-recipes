@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest Handbrake disk image and imports into Munki. This recipe is based on ccom.github.keeleysam.autopkg.munki.HandBrake and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.Handbrake</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/handbrake</string>
+		<key>NAME</key>
+		<string>app_handbrake</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Video</string>
+			<key>description</key>
+			<string>HandBrake is an open-source, GPL-licensed, multiplatform, multithreaded video transcoder.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>HandBrake ist ein quelloffener, GPL-lizenzierter, plattformübergreifender Multithreading-Videotranscoder.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>HandBrake Community</string>
+			<key>display_name</key>
+			<string>HandBrake</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.keeleysam.autopkg.munki.HandBrake</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.keeleysam.autopkg.download.HandBrake</key>
+			<dict>
+				<key>git_hash</key>
+				<string>9ea4ad1be9603bc312c439c6810a9e07c374e9fc</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.keeleysam-recipes/Handbrake/Handbrake.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>1bb0ebfdb68638123c159879f4b3d008ca226feb63669c9daaff9355d917d196</string>
+			</dict>
+			<key>com.github.keeleysam.autopkg.munki.HandBrake</key>
+			<dict>
+				<key>git_hash</key>
+				<string>f6df176e67433ef78fb1621ca56724a5e8bc4860</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.keeleysam-recipes/Handbrake/Handbrake.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>d0446a2c18e4e50ae5eae99e345d5d3d267478ae7669005c6550dac5367fcee6</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

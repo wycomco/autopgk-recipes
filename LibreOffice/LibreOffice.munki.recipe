@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release version of LibreOffice and imports into Munki. Set RELEASE to either "fresh" or "still".
+
+LibreOffice Still is the stable version that has undergone more testing (over a longer time). It is usually recommended for more conservative use.
+LibreOffice Fresh is the stable version with the most recent features. Users interested in taking advantage of our most innovative features should download and use our fresh version.
+
+This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.LibreOffice</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_CATEGORY</key>
+		<string>Productivity</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/libreoffice</string>
+		<key>NAME</key>
+		<string>app_libreoffice</string>
+		<key>RELEASE</key>
+		<string>still</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>description</key>
+			<string>LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>LibreOffice ist eine freie Zusammenstellung gebräuchlicher Software für Arbeiten im Büro. Dazu gehören Programme zur Textverarbeitung, Tabellenkalkulation, Präsentation und zum Erstellen von Zeichnungen. Dies ist die englische Version.</string>
+					<key>display_name</key>
+					<string>LibreOffice englisch</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>The Document Foundation</string>
+			<key>display_name</key>
+			<string>LibreOffice English version</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>io.github.hjuutilainen.munki.LibreOffice</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>io.github.hjuutilainen.download.LibreOffice</key>
+			<dict>
+				<key>git_hash</key>
+				<string>83e585bad4496703036b1e85511953d0de58de33</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/LibreOffice/LibreOffice.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>20387d8fe81b5d189db437c7ab255c22f40637953c88337aa19b78313273ef8a</string>
+			</dict>
+			<key>io.github.hjuutilainen.munki.LibreOffice</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8b6a277dd5915929ac29ae5e76a1de449f7ed10a</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/LibreOffice/LibreOffice.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>6629394ea06504bd72c3ef9630f041f834b5092481a20d1d9c62aa1515f46241</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
