@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads OneDrive standalone installer and imports it to Munki. Does not customize the settings. See https://support.office.com/en-us/article/Configure-the-OneDrive-Next-Generation-Sync-Client-on-macOS-eadddc4e-edc0-4982-9f50-2aef5038c307 for configuration options. This recipe is based on com.github.apettinen.munki.MSOneDrive and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.MSOneDrive</string>
+	<key>Input</key>
+	<dict>
+        <key>DISPLAY_NAME</key>
+        <string>Microsoft OneDrive</string>
+        <key>MUNKI_CATEGORY</key>
+        <string>Productivity</string>
+		<key>MUNKI_DEVELOPER</key>
+		<string>Microsoft</string>
+        <key>MUNKI_NAME</key>
+        <string>app_onedrive</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/microsoft/onedrive</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+            <key>description</key>
+            <string>Get to your files from anywhere, on any device, with Microsoft OneDrive. Share and work together with anyone in your work and life. With OneDrive for Business, you also get storage for your work files so you can share and collaborate on them with other people at your work or school/university. The OneDrive app for Mac makes it easy to work with your OneDrive files on your Mac.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>OneDrive ist der zentrale Ort für alle Bereiche Ihres Lebens. Es bietet Ihnen kostenlosen Onlinespeicher für alle Ihre persönlichen Dateien, sodass Sie von Ihrem Mac und allen anderen Geräten, die Sie verwenden – iPhone, iPad, PC oder Android – darauf zugreifen können.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>%MUNKI_DEVELOPER%</string>
+			<key>display_name</key>
+			<string>%DISPLAY_NAME%</string>
+			<key>minimum_os_version</key>
+			<string>10.12</string>
+			<key>name</key>
+			<string>%MUNKI_NAME%</string>
+            <key>postinstall_script</key>
+            <string>#!/bin/sh
+launchctl remove com.microsoft.OneDriveStandaloneUpdater
+rm -f /Library/LaunchAgents/com.microsoft.OneDriveStandaloneUpdater.plist
+rm -f /Library/LaunchDaemons/com.microsoft.OneDriveStandaloneUpdaterDaemon.plist
+rm -f /Library/LaunchDaemons/com.microsoft.OneDriveUpdaterDaemon.plist
+echo "Removed Microsoft AutoUpdate for OneDrive"
+
+exit 0</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>unattended_uninstall</key>
+            <true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.apettinen.munki.MSOneDrive</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.apettinen.download.MSOneDrive</key>
+			<dict>
+				<key>git_hash</key>
+				<string>84f14b9c959d5f4ce498c6d9da6c0dbd21cb95d0</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.apettinen-recipes/MSOneDrive/MSOneDrive.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>3d2205f24f7bd6d637aedf8d509696ebc3f8c560b09fb0bda0e599467c79d629</string>
+			</dict>
+			<key>com.github.apettinen.munki.MSOneDrive</key>
+			<dict>
+				<key>git_hash</key>
+				<string>fc3cdd3ac64774b5e8b44943ccabb6d2019d8cba</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.apettinen-recipes/MSOneDrive/MSOneDrive.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>27e24bb33cfe7f35977a05830c32bb5f1118318102fa9d95eb9631f5fb136442</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

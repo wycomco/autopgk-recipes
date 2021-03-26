@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest Skype for Business 2016 multilingual update pkg, appends the version to the end of the filename, and imports into Munki.
+
+This recipe is based on com.github.autopkg.munki.SkypeForBusiness and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.SkypeForBusiness</string>
+	<key>Input</key>
+	<dict>
+		<key>CHANNEL</key>
+		<string>Production</string>
+		<key>LOCALE_ID</key>
+		<string>1031</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/microsoft/skypeforbusiness</string>
+		<key>NAME</key>
+		<string>upd_skypeforbusiness</string>
+		<key>PRODUCT</key>
+		<string>SkypeForBusiness</string>
+		<key>VERSION</key>
+		<string>latest</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Skype for Business</string>
+				<string>Microsoft Error Reporting</string>
+				<string>Microsoft AutoUpdate</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+            <key>category</key>
+            <string>Productivity</string>
+            <key>description</key>
+            <string>Skype for Business is an instant messaging client (IM) used with Skype for Business Server or with Skype for Business Online (available with Microsoft Office 365).[1] Skype for Business is enterprise software. (Source: Wikipedia)</string>
+        	<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>Skype for Business ist eine proprietäre Anwendung von Microsoft, die verschiedene Kommunikationsmedien (Real-time Collaboration, IP-Telefonie, Videokonferenz) in einer einheitlichen Anwendungsumgebung zusammenfasst. (Quelle: Wikipedia)</string>
+					<key>category</key>
+					<string>Produktivität</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>Microsoft</string>
+			<key>display_name</key>
+			<string>Skype for Business</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>postinstall_script</key>
+            <string>#!/bin/sh
+if [ -d "/Library/Application Support/Microsoft/MAU2.0" ]; then
+   launchctl remove com.microsoft.autoupdate.helper
+   launchctl remove com.microsoft.update.agent
+   rm -f /Library/PrivilegedHelperTools/com.microsoft.autoupdate.helper
+   rm -f /Library/LaunchAgents/com.microsoft.update.agent.plist
+   rm -f /Library/LaunchDaemons/com.microsoft.autoupdate.helper.plist
+   rm -rf /Library/Application\ Support/Microsoft/MAU2.0/
+   echo "Removed Microsoft AutoUpdate"
+fi
+
+exit 0</string>
+			<key>update_for</key>
+			<array>
+				<string>app_skypeforbusiness</string>
+			</array>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.SkypeForBusiness</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>MSOfficeMacURLandUpdateInfoProvider</key>
+			<dict>
+				<key>git_hash</key>
+				<string>b628c928cb567779c55c5511ef1a220caa8e0618</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacURLandUpdateInfoProvider.py</string>
+				<key>sha256_hash</key>
+				<string>efde8df5ceb73802c25b9c69c7d8b7af9c646a62079ba7a731539793bdef8f97</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.MSOfficeMacProduct</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacProduct.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>9d98baa020cb9228ff75122bdd7b92a20196cedb9f5983c140e7c1e771cf26cf</string>
+			</dict>
+			<key>com.github.autopkg.download.SkypeForBusiness</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/SkypeForBusiness.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>489629325f5d886c111ff87f9c295bab6728a9f8564bedb12ff7813e97bb1595</string>
+			</dict>
+			<key>com.github.autopkg.munki.SkypeForBusiness</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/SkypeForBusiness.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>193f4195171ec6124767d144d56b7206ab8006bc7327b292ec9a43e983f57d45</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
