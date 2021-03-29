@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>This recipe downloads and imports the full installer pkg for Microsoft Word 365 into Munki
+    
+	This is accomplished via the Office 365 recipes from rtrouton-recipes.
+	
+    These in turn, utilise the fwlink's found on macadmins.software
+        
+    This recipe is based on com.github.dataJAR-recipes.munki.Microsoft Word 365 and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
+	</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.MSWord365</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/microsoft/office365</string>
+		<key>NAME</key>
+        <string>app_word365</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Microsoft Auto Update</string>
+				<string>Microsoft Error Reporting</string>
+				<string>Microsoft Word</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>The Word you want. State-of-the-art editing, reviewing, and sharing tools make creating and polishing documents easy.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Das Word, das Sie wollen. Modernste Werkzeuge zum Bearbeiten, Überprüfen und Freigeben machen das Erstellen und Überarbeiten von Dokumenten einfach.</string>
+				</dict>
+			</dict>
+			<key>display_name</key>
+			<string>Microsoft Word</string>
+			<key>name</key>
+			<string>%NAME%</string>
+            <key>postinstall_script</key>
+            <string>#!/bin/sh
+if [ -d "/Library/Application Support/Microsoft/MAU2.0" ]; then
+   launchctl remove com.microsoft.autoupdate.helper
+   launchctl remove com.microsoft.update.agent
+   rm -f /Library/PrivilegedHelperTools/com.microsoft.autoupdate.helper
+   rm -f /Library/LaunchAgents/com.microsoft.update.agent.plist
+   rm -f /Library/LaunchDaemons/com.microsoft.autoupdate.helper.plist
+   rm -rf /Library/Application\ Support/Microsoft/MAU2.0/
+   pkgutil --forget com.microsoft.autoupdate2
+   pkgutil --forget com.microsoft.package.Microsoft_AutoUpdate.app
+   echo "Removed Microsoft AutoUpdate"
+fi
+
+exit 0</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.dataJAR-recipes.munki.Microsoft Word 365</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.dataJAR-recipes.munki.Microsoft Word 365</key>
+			<dict>
+				<key>git_hash</key>
+				<string>cf581699a2aaf48ec423a25e7fb90ec7098311fe</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/Microsoft Word 365/Microsoft Word 365.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>5b9f7b26a0b84d56e12fb8b3388bb75fb111a1f4a3dbb1d56d209129ce85e753</string>
+			</dict>
+			<key>com.github.rtrouton.download.microsoftword365</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8a29db2944790f4a29cc98618e0d2e87c96668d5</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/MicrosoftWord365/MicrosoftWord365.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>447da48064a925c65307413ae32c76a665d633f0ccf9ad7f53d0de1809441c1c</string>
+			</dict>
+			<key>com.github.rtrouton.pkg.microsoftword365</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8a29db2944790f4a29cc98618e0d2e87c96668d5</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/MicrosoftWord365/MicrosoftWord365.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>fef9f1516e78c99ecff2d358816da3f3bd72502d039e7e442052d4753bcf1dab</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

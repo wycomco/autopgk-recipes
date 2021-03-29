@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest Munkireport installer and imports into a Munki repo.
+      By default it will package all modules that are defined on the server. You can override the modules by defining them below in the modules array. This recipe is based on com.github.munkireport.autopkg.munki and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language. Additionally it sets the default inventory server for internal use.
+    </string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.autopkg</string>
+	<key>Input</key>
+	<dict>
+		<key>BASEURL</key>
+		<string>https://inventory.wycomco.de/mr</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/plugins/munkireport-php</string>
+		<key>NAME</key>
+		<string>munkireport</string>
+		<key>modules</key>
+		<array/>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>Munkireport is a software that automates and efficiently inventories macOS systems. This client binds the computer to the corresponding server components and henceforth ensures regular updates of the inventory lists.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+					<key>description</key>
+					<string>Munkireport ist eine Software, mit der macOS-Systeme automatisiert und effizient inventarisiert werden können. Dieser Client bindet den Computer an die entsprechende Server-Komponenten und sorgt fortan für regelmäßige Aktualsierungen der Inventarlisten.</string>
+				</dict>
+			</dict>
+			<key>display_name</key>
+			<string>Munkireport</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.munkireport.autopkg.munki</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>MunkiReportPackager</key>
+			<dict>
+				<key>git_hash</key>
+				<string>2f69dbf4cc499ab1fc4f483c47f4d62269860657</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.munkireport-recipes/MunkiReportPackager.py</string>
+				<key>sha256_hash</key>
+				<string>43774e2426c7afb5f5c357d6305fe362f24ea0db91f295e98f65c60ce63ce9c0</string>
+			</dict>
+			<key>MunkiReportUrlCreator</key>
+			<dict>
+				<key>git_hash</key>
+				<string>311a7722aec4b8a6333b6beb1390f095ea9eae05</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.munkireport-recipes/MunkiReportUrlCreator.py</string>
+				<key>sha256_hash</key>
+				<string>2f780c74bdefdc5225fa44d62e2cbeab7fe9602e42c7de552d9f97012c9b1309</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.munkireport.autopkg.munki</key>
+			<dict>
+				<key>git_hash</key>
+				<string>6fbb6297c1c0a35f7bc540c669f9b5d8a3a92b01</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.munkireport-recipes/munkireport.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>867a5c2ff2631dbdc36a4bff159904e529bc71dc4ad01591bda44886238a88b5</string>
+			</dict>
+			<key>com.github.munkireport.autopkg.pkg</key>
+			<dict>
+				<key>git_hash</key>
+				<string>5149ed351b94b10892e6f560cbbb61a8103b1d7b</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.munkireport-recipes/munkireport.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>481dac05dc516b2a7014675e718908265fbed5eac5419d6733b461b84a4e2114</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

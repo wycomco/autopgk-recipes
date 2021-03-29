@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Pragli and imports it into Munki. This recipe is based on com.github.wycomco.munki.Pragli and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.Pragli</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/pragli</string>
+		<key>NAME</key>
+		<string>app_pragli</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Social Media</string>
+			<key>description</key>
+			<string>Virtual office for remote teams</string>
+			<key>developer</key>
+			<string>Vivek Nair</string>
+			<key>display_name</key>
+			<string>Pragli</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Soziale Netze</string>
+					<key>description</key>
+					<string>Virtuelles Büro im Home-Office</string>
+				</dict>
+			</dict>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.wycomco.munki.Pragli</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.wycomco.download.Pragli</key>
+			<dict>
+				<key>git_hash</key>
+				<string>002d479558bce27ea9c97ee326674a11dcfa2a64</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/Pragli/Pragli.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>a3729f9f1720a06bfa85f528be2cd5ba94dbbb1526fdea98330f1ccbeb295e8f</string>
+			</dict>
+			<key>com.github.wycomco.munki.Pragli</key>
+			<dict>
+				<key>git_hash</key>
+				<string>002d479558bce27ea9c97ee326674a11dcfa2a64</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/Pragli/Pragli.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>35f1989203c3315bbb319bf8e8be7cdee53b1406655ef511b909e09015173cea</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

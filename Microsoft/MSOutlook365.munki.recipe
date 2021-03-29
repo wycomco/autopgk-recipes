@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>This recipe downloads and imports the full installer pkg for Microsoft Outlook 365 into Munki
+    
+	This is accomplished via the Office 365 recipes from rtrouton-recipes.
+	
+    These in turn, utilise the fwlink's found on macadmins.software
+        
+    This recipe is based on com.github.dataJAR-recipes.munki.Microsoft Outlook 365 and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.
+	</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.MSOutlook365</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/microsoft/office365</string>
+		<key>NAME</key>
+        <string>app_outlook365</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Microsoft Auto Update</string>
+				<string>Microsoft Error Reporting</string>
+				<string>Microsoft Outlook</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>Get a clear view of your email, calendars, contacts and even the weather to connect with others more effectively. Designed for Mac, Outlook efficiently keeps track of your digital life.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Verschaffen Sie sich einen klaren Überblick über Ihre E-Mails, Kalender, Kontakte und sogar das Wetter, um effektiver mit anderen Kontakt aufzunehmen. Outlook wurde für Mac entwickelt und verfolgt effizient Ihr digitales Leben.</string>
+				</dict>
+			</dict>
+			<key>display_name</key>
+			<string>Microsoft Outlook</string>
+			<key>name</key>
+			<string>%NAME%</string>
+            <key>postinstall_script</key>
+            <string>#!/bin/sh
+if [ -d "/Library/Application Support/Microsoft/MAU2.0" ]; then
+   launchctl remove com.microsoft.autoupdate.helper
+   launchctl remove com.microsoft.update.agent
+   rm -f /Library/PrivilegedHelperTools/com.microsoft.autoupdate.helper
+   rm -f /Library/LaunchAgents/com.microsoft.update.agent.plist
+   rm -f /Library/LaunchDaemons/com.microsoft.autoupdate.helper.plist
+   rm -rf /Library/Application\ Support/Microsoft/MAU2.0/
+   pkgutil --forget com.microsoft.autoupdate2
+   pkgutil --forget com.microsoft.package.Microsoft_AutoUpdate.app
+   echo "Removed Microsoft AutoUpdate"
+fi
+
+exit 0</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.dataJAR-recipes.munki.Microsoft Outlook 365</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.dataJAR-recipes.munki.Microsoft Outlook 365</key>
+			<dict>
+				<key>git_hash</key>
+				<string>639eb043de39b03da2c3fa9b643dd56b82b2949f</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/Microsoft Outlook 365/Microsoft Outlook 365.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>ca4e4490235ee6da086b22bdd1fc1f57832264ccc97cc87159e54a874f15e55a</string>
+			</dict>
+			<key>com.github.rtrouton.download.microsoftoutlook365</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8a29db2944790f4a29cc98618e0d2e87c96668d5</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/MicrosoftOutlook365/MicrosoftOutlook365.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>49e6bee5ce8bd6216d6141d33952dff41d3e5e87abcc774ceb6f60ae0e91262f</string>
+			</dict>
+			<key>com.github.rtrouton.pkg.microsoftoutlook365</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8a29db2944790f4a29cc98618e0d2e87c96668d5</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/MicrosoftOutlook365/MicrosoftOutlook365.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>64658df5769a8f3d56d93f830ed900bea39ceffddfd7fdcd4e53e160792ff390</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

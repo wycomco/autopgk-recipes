@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Parallels Desktop and imports it into Munki. This recipe has been tested with major versions 9, 10, 11, 12, 13, and 14.
+	
+	This recipe is based on com.github.homebysix.munki.ParallelsDesktop and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.ParallelsDesktop13</string>
+	<key>Input</key>
+	<dict>
+		<key>MAJOR_VERSION</key>
+		<string>15</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/parallels/%NAME%</string>
+		<key>NAME</key>
+		<string>app_parallelsdesktop15</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>description</key>
+			<string>Virtualization tool for running Windows apps without rebooting.</string>
+    		<key>category</key>
+			<string>Productivity</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>Virtualisierungswerkzeug zum Ausführen von Windows-Anwendungen ohne Neustart.</string>
+					<key>category</key>
+					<string>Produktivität</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>Parallels, Inc.</string>
+			<key>display_name</key>
+			<string>Parallels Desktop</string>
+			<key>minimum_os_version</key>
+			<string>10.12</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
+chflags nohidden "/Applications/Parallels Desktop.app"
+            </string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.munki.ParallelsDesktop</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.homebysix.download.ParallelsDesktop</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c265e8560130f66c2674fca346139224fac46657</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Parallels/ParallelsDesktop.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>130324823b1849c24ce68c0d1f820337d8740589ff180bdbf1049fd51cbf19f2</string>
+			</dict>
+			<key>com.github.homebysix.munki.ParallelsDesktop</key>
+			<dict>
+				<key>git_hash</key>
+				<string>05c56e9d3edf5cc18ce7a94e68568cb42ae3c515</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Parallels/ParallelsDesktop.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>c10cb35890fbd4ae81c681ca5f6d3eeb91570df8fc0abca23b40768c0c4ac1db</string>
+			</dict>
+			<key>com.github.homebysix.pkg.ParallelsDesktop</key>
+			<dict>
+				<key>git_hash</key>
+				<string>05c56e9d3edf5cc18ce7a94e68568cb42ae3c515</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Parallels/ParallelsDesktop.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>ed05cd9a703515028cd2cee778a118c7cc52b277ebd8128a4ebd559f9f8669fa</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

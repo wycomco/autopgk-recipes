@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads latest version of Pacifist and imports it into a Munki repo. This recipe is based on com.github.arubdesu.munki.Pacifist and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.Pacifist</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/pacifist</string>
+		<key>NAME</key>
+        <string>app_pacifist</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>Pacifist is a shareware application that opens Mac OS X .pkg package files, .dmg disk images, and .zip, .tar, .tar.gz, .tar.bz2, and .xar archives and allows you to extract individual files and folders out of them.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>Pacifist ist eine Shareware, die folgende Mac-Formate öffnet: .pkg-Pakete, .dmg-Images sowie .zip-, .tar-, .tar.gz-, .tar.bz2- und .xar-Archive. Hieraus lassen sich einzelne Dateien und Ordner extrahieren.</string>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+				</dict>
+			</dict>
+			<key>display_name</key>
+			<string>Pacifist</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.arubdesu.munki.Pacifist</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.arubdesu.download.Pacifist</key>
+			<dict>
+				<key>git_hash</key>
+				<string>ef7fc741443a0708fb5c73c43a38f0d5187f623a</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.wycomco.arubdesu-recipes/Pacifist/Pacifist.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>004ac24968f125b0736249f7843e873f751db108e328b82d4fc045fba6b9d5a6</string>
+			</dict>
+			<key>com.github.arubdesu.munki.Pacifist</key>
+			<dict>
+				<key>git_hash</key>
+				<string>fb9fde5700ce3fda82384f70f7d4a0585ec42881</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.wycomco.arubdesu-recipes/Pacifist/Pacifist.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>97cdcf9f4ebbee7f8a34c83e5867c488c04748f4f7e9ec3cc744421de7815990</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
