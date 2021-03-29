@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest TrelloX disk image and imports into Munki. This recipe is based on com.github.clburlison.munki.trellox and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.trellox</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/trellox</string>
+		<key>NAME</key>
+        <string>app_trellox</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>description</key>
+			<string>An unofficial Trello App for macOS.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Inoffizielle Desktop-App für Trello.</string>
+				</dict>
+			</dict>
+            <key>display_name</key>
+            <string>TrelloX (Xccello)</string>
+ 			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.clburlison.munki.trellox</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.clburlison.download.trellox</key>
+			<dict>
+				<key>git_hash</key>
+				<string>2f53163be4631656a278226727a8306d0ce8e9c9</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.clburlison-recipes/LingsDesigns/TrelloX.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>90eb744b7d99977a3f23d65ae455e3a976c6151fa278075e2d76d209dc714dfd</string>
+			</dict>
+			<key>com.github.clburlison.munki.trellox</key>
+			<dict>
+				<key>git_hash</key>
+				<string>94efb7389a39f06737aa1b50ee686627188b8505</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.clburlison-recipes/LingsDesigns/TrelloX.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>f384c70fdf3e9c240b96790f623686b3df90576ca480572e2c3b306d21502570</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

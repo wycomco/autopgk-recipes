@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest 'The Unarchiver' and imports into Munki. This recipe is based on com.github.autopkg.munki.TheUnarchiver and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.TheUnarchiver</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/theunarchiver</string>
+		<key>NAME</key>
+        <string>app_theunarchiver</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>The Unarchiver is a much more capable replacement for "Archive Utility.app", the built-in archive unpacker program on Mac OS X. The Unarchiver is designed to handle many more formats than Archive Utility, and to better fit in with the design of the Finder.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>The Unarchiver ist ein Ersatz für das in macOS enthaltene Komprimierungsprogramm mit deutlich mehr Fähigkeiten. The Unarchiver versteht mehr Formate und passt sich der grafische Oberfläche des Betriebssystems besser an.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>MacPaw Inc.</string>
+			<key>display_name</key>
+			<string>The Unarchiver</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+		<key>pkginfo_keys_to_copy_from_sparkle_feed</key>
+		<array>
+			<string>minimum_os_version</string>
+		</array>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.TheUnarchiver</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.TheUnarchiver</key>
+			<dict>
+				<key>git_hash</key>
+				<string>4c42f36018949ce59178d691bca7ce8a45d8c051</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/The Unarchiver/TheUnarchiver.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>d51ce7285a2d14b9643fc516b870958f1bdbe9a0fd9a5a426081e94a97d259de</string>
+			</dict>
+			<key>com.github.autopkg.munki.TheUnarchiver</key>
+			<dict>
+				<key>git_hash</key>
+				<string>3241629e0afa554fea7eeaf211b7e912ed75066b</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/The Unarchiver/TheUnarchiver.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>2060af1b31867a607da2cfee1001ed19e1cc7bb7ce195fe137c97790dd469c21</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

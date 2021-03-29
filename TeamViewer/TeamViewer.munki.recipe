@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release version of TeamViewer and imports into Munki. This recipe is based on io.github.hjuutilainen.munki.TeamViewer and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.TeamViewer</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_CATEGORY</key>
+		<string>Utilities</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/teamviewer</string>
+		<key>NAME</key>
+		<string>app_teamviewer</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>description</key>
+			<string>All-In-One Solution for Remote Access and Support over the Internet.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+					<key>description</key>
+					<string>Komplettlösung für Fernzugriff und Support über das Internet.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>TeamViewer GmbH</string>
+			<key>display_name</key>
+			<string>TeamViewer</string>
+			<key>minimum_os_version</key>
+			<string>10.13.6</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>io.github.hjuutilainen.munki.TeamViewer</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>io.github.hjuutilainen.download.TeamViewer</key>
+			<dict>
+				<key>git_hash</key>
+				<string>5e3f253dc7bc41f21fd0274ffaef6a16241487aa</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/TeamViewer/TeamViewer.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>79db0f7979df214e41eed87725c90b307e64f42db9440211cd02d2f5a72f015b</string>
+			</dict>
+			<key>io.github.hjuutilainen.munki.TeamViewer</key>
+			<dict>
+				<key>git_hash</key>
+				<string>d15245438b6a54e819140cf9810008d4ebab2fdd</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/TeamViewer/TeamViewer.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>a83b309318023b238bb11b3864c0e5c78c42bae269cd8b6cd8d9855ad8d50317</string>
+			</dict>
+			<key>io.github.hjuutilainen.pkg.TeamViewer</key>
+			<dict>
+				<key>git_hash</key>
+				<string>d15245438b6a54e819140cf9810008d4ebab2fdd</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/TeamViewer/TeamViewer.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>d219b65bc42ee621d93c8d62a7a3e0c580a76a9e35680de644dc47aa8c6c3a67</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

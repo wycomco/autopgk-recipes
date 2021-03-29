@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release version of TeamViewer QuickSupport and imports into Munki. TeamViewer QuickSupport is a simple and small customer module, runs immediately without installation and does not require administrative rights - optimized for instant support.
+
+This recipe is based on io.github.hjuutilainen.munki.TeamViewerQS and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.TeamViewerQS</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_CATEGORY</key>
+		<string>Utilities</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/teamviewer</string>
+		<key>NAME</key>
+		<string>app_teamviewerqs</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>TeamViewer QuickSupport</string>
+				<string>TeamViewerQS</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>force_munkiimport</key>
+			<true/>
+			<key>description</key>
+			<string>Get remote support for your computers and mobile devices – whenever you need it.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+					<key>description</key>
+					<string>Erhalten Sie Fernsupport für Ihre Computer und mobilen Geräte – wann immer Sie ihn benötigen.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>TeamViewer GmbH</string>
+			<key>display_name</key>
+			<string>TeamViewer QuickSupport</string>
+			<key>minimum_os_version</key>
+			<string>10.13.6</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>io.github.hjuutilainen.munki.TeamViewerQS</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>io.github.hjuutilainen.download.TeamViewerQS</key>
+			<dict>
+				<key>git_hash</key>
+				<string>04200ef1a9f42693d732316bad544cee873c8cc3</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/TeamViewer/TeamViewerQuickSupport.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>55e7be257a4f3522977a9512b8fbf3429b192b318a54cf5b556d1eb4c6754716</string>
+			</dict>
+			<key>io.github.hjuutilainen.munki.TeamViewerQS</key>
+			<dict>
+				<key>git_hash</key>
+				<string>9f3cb4a53a6657893a3208af632f41e5dcf8df66</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/TeamViewer/TeamViewerQuickSupport.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>e610918e25334c4a34124794ca282173f48fc3e2940a824fe14b897556a65595</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

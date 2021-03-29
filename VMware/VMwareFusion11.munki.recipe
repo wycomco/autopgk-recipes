@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the most recent version of VMware Fusion 11 and imports it into Munki. This recipe is based on com.github.dataJAR-recipes.munki.VMware Fusion 11 and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+    <key>Identifier</key>
+    <string>com.github.wycomco.override.Fusion11</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/vmware</string>
+		<key>NAME</key>
+        <string>app_fusion11</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>VMware Fusion is the easiest, fastest, and most reliable way to run Windows and other x86 based operating systems on a Mac without rebooting.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>VMware Fusion ist die einfachste, schnellste und zuverlässigste Möglichkeit, Windows und andere x86-basierte Betriebssysteme auf einem Mac ohne Neustart laufen zu lassen.</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>VMware</string>
+			<key>display_name</key>
+			<string>VMWare Fusion Pro 11</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/bash
+#
+# Pinched with &lt;3 from: https://github.com/autopkg/justinrummel-recipes/blob/42bc13881fe373f771cefec20a53d7844172019f/VMware%20Fusion/VMwareFusion.pkg.munki.recipe
+#
+
+if [ -e /Applications/VMware\ Fusion.app/Contents/Library/Initialize\ VMware\ Fusion.tool ]
+then
+        /Applications/VMware\ Fusion.app/Contents/Library/Initialize\ VMware\ Fusion.tool set
+fi</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.dataJAR-recipes.munki.VMware Fusion 11</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.dataJAR-recipes.download.VMware Fusion 11</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e5f1c332b79c9a9ed0f1ed5465dd6b4fca6113</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/VMware Fusion 11/VMware Fusion 11.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>778703fd7a464a9deb5fe8efa35c54ce993f30d69375efb5e28ca8c0ddb3d346</string>
+			</dict>
+			<key>com.github.dataJAR-recipes.munki.VMware Fusion 11</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e5f1c332b79c9a9ed0f1ed5465dd6b4fca6113</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/VMware Fusion 11/VMware Fusion 11.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>3846889f6f29a67d5b80e30a543f1146db4710f31554e33d3d589ad0520ae819</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

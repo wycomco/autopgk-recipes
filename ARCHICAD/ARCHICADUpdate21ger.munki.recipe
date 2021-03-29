@@ -43,6 +43,8 @@ INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 21 DE/
 			<string>GRAPHISOFT</string>
 			<key>icon_name</key>
 			<string>app_archicad%MAJOR_VERSION%.png</string>
+			<key>installer_type</key>
+			<string>copy_from_dmg</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>de</key>
@@ -81,8 +83,6 @@ Team members without the update will no longer be able to open project files!
 				<key>ok_label</key>
 				<string>OK</string>
 			</dict>
-			<key>installer_type</key>
-			<string>copy_from_dmg</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
@@ -96,11 +96,11 @@ Team members without the update will no longer be able to open project files!
 			<key>ARCHICADUpdatesProcessor</key>
 			<dict>
 				<key>git_hash</key>
-				<string>13c19fc1408d66f6e3fac0541f77eb9b245a92f4</string>
+				<string>56eea9367ed962cf7e7bb1a36627baf2cf50e53c</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/archicad_updates/ARCHICADUpdatesProcessor.py</string>
 				<key>sha256_hash</key>
-				<string>a52a675df32d97f31840c23959119384f38b5af60366a8d20cf89ba809bbac3e</string>
+				<string>ae1f2be2fc4f3385fefbe7df7b79fb3a5490d1cf07c3a5de7fbc72aa94b49fb2</string>
 			</dict>
 		</dict>
 		<key>parent_recipes</key>
@@ -117,11 +117,11 @@ Team members without the update will no longer be able to open project files!
 			<key>com.github.wycomco.munki.ARCHICADUpdate</key>
 			<dict>
 				<key>git_hash</key>
-				<string>40a6c455cbaaf17ca8901e62cc05534deed14be3</string>
+				<string>b3a18ce4b5d119b4cb1cb44c3e6293f1bc3e1b9c</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/archicad_updates/ARCHICADUpdate.munki.recipe</string>
 				<key>sha256_hash</key>
-				<string>5a957382a97e6576dc6056b15c2151ba47cfe34e0959ce5dc9f0d1c1989af508</string>
+				<string>9b7166ed71a701b8a91a7adaaed0cff0326ac7ac12c56381999546aed71af7d0</string>
 			</dict>
 		</dict>
 	</dict>
