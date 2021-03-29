@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Sipgate Softphone and imports it into Munki. This recipe is based on com.github.wycomco.munki.sipgate-softphone and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.SipgateSoftphone</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/sipgate</string>
+		<key>NAME</key>
+		<string>app_sipgate-softphone</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>Place calls not only from your phone or mobile also now from any computer – with the sipgate Softphone.</string>
+			<key>developer</key>
+			<string>sipgate GmbH</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+					<key>description</key>
+					<string>Telefonieren Sie nicht nur mit Telefon und Handy, sondern jetzt auch an jedem Computer – mit dem sipgate Softphone.</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
+			<key>display_name</key>
+			<string>sipgate Softphone</string>
+			<key>minimum_os_version</key>
+			<string>10.10</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.wycomco.munki.sipgate-softphone</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.wycomco.download.sipgate-softphone</key>
+			<dict>
+				<key>git_hash</key>
+				<string>05f4c8c7f81f07a5d145be7728982fc6f1032964</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/sipgate_softphone/sipgate-softphone.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>35e27a0284ee61750a8038ee0303e37564385004b9245df2cdbc29a3adaaee2c</string>
+			</dict>
+			<key>com.github.wycomco.munki.sipgate-softphone</key>
+			<dict>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/sipgate_softphone/Sipgate-Softphone.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>328e462f69d85f3ae00db647798ad015081fe783b4d97e34ff4b95b6a32b6302</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

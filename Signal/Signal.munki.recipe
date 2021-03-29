@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Signal and imports it into Munki. This recipe is based on com.github.jaharmi.munki.Signal and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.Signal</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_PKGINFO_DISPLAYNAME</key>
+		<string>Signal Desktop</string>
+		<key>MUNKI_PKGINFO_NAME</key>
+		<string>app_signal</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/signal</string>
+		<key>NAME</key>
+		<string>Signal</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Social Media</string>
+            <key>description</key>
+            <string>Signal is a cross-platform encrypted messaging service developed by the Signal Foundation and Signal Messenger LLC. First and foremost known for its data economy and end-to-end encryption, it is consistently recommended by security experts and privacy organizations (source: Wikipedia).</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Soziale Netze</string>
+					<key>description</key>
+					<string>Signal ist ein freier, verschlüsselnder Messenger, der von der gemeinnützigen Signal-Stiftung entwickelt wird. Er ist vor allem für seine Datensparsamkeit und Ende-zu-Ende-Verschlüsselung bekannt und wird daher immer wieder von Sicherheitsexperten und Datenschutzorganisationen empfohlen. (Quelle: Wikipedia)</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>RIDDLE QUIET VENTURES, LLC</string>
+			<key>display_name</key>
+			<string>%MUNKI_PKGINFO_DISPLAYNAME%</string>
+			<key>name</key>
+			<string>%MUNKI_PKGINFO_NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.jaharmi.munki.Signal</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.jaharmi.download.Signal</key>
+			<dict>
+				<key>git_hash</key>
+				<string>08c97ab84921ebadcd42260a0447a445f52a5ad6</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.jaharmi-recipes/Signal/Signal.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>dd490e24ca738147e4926030fc88965288cc6ba56eae85396a7564393cef19a0</string>
+			</dict>
+			<key>com.github.jaharmi.munki.Signal</key>
+			<dict>
+				<key>git_hash</key>
+				<string>fae562768fa29d94f4677d67e5952da790b15d2c</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.jaharmi-recipes/Signal/Signal.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>9c081db2499f8c056c41edaf0783d0e75f70f62a56596a7d41c517ed6219118b</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
