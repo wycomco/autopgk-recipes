@@ -8,7 +8,7 @@
     <string>com.github.wycomco.override.freefilesync</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
+        <key>NAME</key>
         <string>app_freefilesync</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>generic/apps/freefilesync</string>

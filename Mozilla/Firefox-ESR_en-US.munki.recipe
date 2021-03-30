@@ -26,6 +26,8 @@
 			<string>Productivity</string>
 			<key>description</key>
 			<string>Mozilla Firefox is a free and open source web browser. This is the ESR version.</string>
+			<key>developer</key>
+			<string>Mozilla Foundation</string>
 			<key>display_name</key>
 			<string>Mozilla Firefox ESR</string>
 			<key>localized_strings</key>

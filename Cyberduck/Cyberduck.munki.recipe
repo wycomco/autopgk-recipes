@@ -34,6 +34,8 @@
 					<string>Mit einer einfach zu bedienenden Oberfläche können Sie Verbindungen zu FTP, SFTP, WebDAV, Amazon S3, Google Storage, Windows Azure, Rackspace Cloud Files und sogar Google Docs herstellen.</string>
 				</dict>
 			</dict>
+			<key>developer</key>
+			<string>Cyberduck</string>
 			<key>display_name</key>
 			<string>Cyberduck</string>
 			<key>name</key>

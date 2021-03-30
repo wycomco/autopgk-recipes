@@ -29,6 +29,10 @@ This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized 
 			<array>
 				<string>generic</string>
 			</array>
+            <key>blocking_applications</key>
+            <array>
+                <string>LibreOffice</string>
+            </array>
 			<key>category</key>
 			<string>%MUNKI_CATEGORY%</string>
 			<key>description</key>
@@ -44,15 +48,17 @@ This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized 
 					<key>description</key>
 					<string>LibreOffice ist eine freie Zusammenstellung gebräuchlicher Software für Arbeiten im Büro. Dazu gehören Programme zur Textverarbeitung, Tabellenkalkulation, Präsentation und zum Erstellen von Zeichnungen. Dies ist die englische Version.</string>
 					<key>display_name</key>
-					<string>LibreOffice englisch</string>
+					<string>LibreOffice deutsch</string>
 				</dict>
 			</dict>
 			<key>developer</key>
 			<string>The Document Foundation</string>
 			<key>display_name</key>
-			<string>LibreOffice English version</string>
+			<string>LibreOffice German version</string>
 			<key>name</key>
 			<string>%NAME%</string>
+            <key>minimum_os_version</key>
+            <string>10.10.0</string>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>

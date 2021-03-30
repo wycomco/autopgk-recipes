@@ -34,6 +34,8 @@
 					<string>Dropbox ist ein kostenloser Dienst, mit dem Sie alle Ihre Fotos, Dokumente und Videos überallhin mitnehmen können. Das bedeutet, dass jede Datei, die Sie in Ihrer Dropbox speichern, automatisch auf all Ihren Computern, Telefonen und sogar auf der Dropbox-Website gespeichert wird.</string>
 				</dict>
 			</dict>
+			<key>developer</key>
+			<string>Dropbox</string>
 			<key>display_name</key>
 			<string>Dropbox</string>
 			<key>name</key>

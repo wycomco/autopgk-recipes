@@ -18,8 +18,8 @@
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>File Sharing</string>
+            <key>category</key>
+            <string>Utilities</string>
 			<key>description</key>
 			<string>Drive File Stream lets you:
 • Access, search and manage files on-demand from your computer in seconds.
@@ -32,8 +32,6 @@
 			<string>Google Drive FileStream</string>
 			<key>name</key>
 			<string>%NAME%</string>
-            <key>category</key>
-            <string>Utilities</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
