@@ -5,11 +5,11 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Suspicious Package and imports it into Munki. This recipe is based on com.github.poundbangbash.eholtam-recipes.munki.SuspiciousPackageApp and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
-	<string>com.github.wycomco.munki.SuspiciousPackageApp</string>
+	<string>com.github.wycomco.override.SuspiciousPackageApp</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>SuspiciousPackageApp</string>
+		<string>app_suspiciouspackage</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>

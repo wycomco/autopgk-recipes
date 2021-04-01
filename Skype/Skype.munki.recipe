@@ -41,7 +41,7 @@
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
-			<string>%NAME%</string>
+			<true/>
 			<key>unattended_uninstall</key>
 			<true/>
 		</dict>
