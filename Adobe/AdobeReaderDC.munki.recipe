@@ -16,8 +16,6 @@
 		<string>generic/apps/adobe/adobereader</string>
 		<key>NAME</key>
 		<string>app_adobereaderdc</string>
-		<key>OS_VERSION</key>
-		<string>10.13.0</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
