@@ -18,6 +18,8 @@
 			<array>
 				<string>generic</string>
 			</array>
+			<key>category</key>
+			<string>Productivity</string>
 			<key>description</key>
 			<string>An unofficial Trello App for macOS.</string>
 			<key>localized_strings</key>
