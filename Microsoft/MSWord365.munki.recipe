@@ -15,10 +15,10 @@
     <string>com.github.wycomco.override.MSWord365</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/microsoft/office365</string>
 		<key>NAME</key>
         <string>app_word365</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/microsoft/office365</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -31,10 +31,6 @@
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Productivity</string>
-			<key>description</key>
-			<string>The Word you want. State-of-the-art editing, reviewing, and sharing tools make creating and polishing documents easy.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -47,6 +43,10 @@
 					<string>Das Word, das Sie wollen. Modernste Werkzeuge zum Bearbeiten, Überprüfen und Freigeben machen das Erstellen und Überarbeiten von Dokumenten einfach.</string>
 				</dict>
 			</dict>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>The Word you want. State-of-the-art editing, reviewing, and sharing tools make creating and polishing documents easy.</string>
 			<key>display_name</key>
 			<string>Microsoft Word</string>
 			<key>name</key>

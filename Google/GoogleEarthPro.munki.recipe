@@ -18,10 +18,10 @@
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Education</string>
 			<key>description</key>
 			<string>Take a virtual journey to any location in the world. Explore 3D buildings, imagery, and terrain. Find cities, places and local businesses.</string>
+			<key>category</key>
+			<string>Education</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>

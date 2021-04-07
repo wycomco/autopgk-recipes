@@ -18,10 +18,10 @@
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Video</string>
 			<key>description</key>
 			<string>HandBrake is an open-source, GPL-licensed, multiplatform, multithreaded video transcoder.</string>
+			<key>category</key>
+			<string>Video</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>

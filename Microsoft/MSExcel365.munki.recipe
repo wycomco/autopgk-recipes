@@ -15,10 +15,10 @@
     <string>com.github.wycomco.override.MSExcel365</string>
 	<key>Input</key>
 	<dict>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/microsoft/office365</string>
 		<key>NAME</key>
         <string>app_excel365</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/microsoft/office365</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -33,8 +33,6 @@
 			</array>
 			<key>category</key>
 			<string>Productivity</string>
-			<key>description</key>
-			<string>See your data in new, intuitive ways. Powerful charts, graphs, and keyboard shortcuts turn columns of numbers into valuable information, so you can work easier.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -47,6 +45,8 @@
 					<string>Sehen Sie Ihre Daten auf neue, intuitive Weise. Leistungsfähige Diagramme, Graphen und Tastenkombinationen machen aus Zahlenspalten wertvolle Informationen, damit Sie einfacher arbeiten können.</string>
 				</dict>
 			</dict>
+			<key>description</key>
+			<string>See your data in new, intuitive ways. Powerful charts, graphs, and keyboard shortcuts turn columns of numbers into valuable information, so you can work easier.</string>
 			<key>display_name</key>
 			<string>Microsoft Excel</string>
 			<key>name</key>

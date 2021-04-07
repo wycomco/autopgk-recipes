@@ -15,10 +15,10 @@
     <string>com.github.wycomco.override.MSOneNote365</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/microsoft/office365</string>
 		<key>NAME</key>
         <string>app_onenote365</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/microsoft/office365</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -33,8 +33,6 @@
 			</array>
 			<key>category</key>
 			<string>Productivity</string>
-			<key>description</key>
-			<string>Your world, organized. Get organized in notebooks you can divide into sections and pages. With easy navigation and search, you’ll always find your notes right where you left them.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -47,6 +45,8 @@
 					<string>Ihre Welt, organisiert. Ordnen Sie sich in Notizbüchern an, die Sie in Abschnitte und Seiten unterteilen können. Mit der einfachen Navigation und Suche finden Sie Ihre Notizen immer dort, wo Sie sie hinterlassen haben.</string>
 				</dict>
 			</dict>
+			<key>description</key>
+			<string>Your world, organized. Get organized in notebooks you can divide into sections and pages. With easy navigation and search, you’ll always find your notes right where you left them.</string>
 			<key>display_name</key>
 			<string>Microsoft OneNote</string>
 			<key>name</key>

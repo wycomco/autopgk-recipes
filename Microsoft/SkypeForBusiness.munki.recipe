@@ -10,14 +10,14 @@ This recipe is based on com.github.autopkg.munki.SkypeForBusiness and customized
 	<string>com.github.wycomco.override.SkypeForBusiness</string>
 	<key>Input</key>
 	<dict>
+		<key>NAME</key>
+		<string>upd_skypeforbusiness</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/microsoft/skypeforbusiness</string>
 		<key>CHANNEL</key>
 		<string>Production</string>
 		<key>LOCALE_ID</key>
 		<string>1031</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/microsoft/skypeforbusiness</string>
-		<key>NAME</key>
-		<string>upd_skypeforbusiness</string>
 		<key>PRODUCT</key>
 		<string>SkypeForBusiness</string>
 		<key>VERSION</key>
@@ -50,10 +50,10 @@ This recipe is based on com.github.autopkg.munki.SkypeForBusiness and customized
 					<string>Produktivität</string>
 				</dict>
 			</dict>
-			<key>developer</key>
-			<string>Microsoft</string>
 			<key>display_name</key>
 			<string>Skype for Business</string>
+			<key>developer</key>
+			<string>Microsoft</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>postinstall_script</key>

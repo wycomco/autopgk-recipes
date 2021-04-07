@@ -15,10 +15,10 @@
     <string>com.github.wycomco.override.MSPowerPoint365</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/microsoft/office365</string>
 		<key>NAME</key>
         <string>app_powerpoint365</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/microsoft/office365</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -33,8 +33,6 @@
 			</array>
 			<key>category</key>
 			<string>Productivity</string>
-			<key>description</key>
-			<string>Communicate with confidence. PowerPoint for Mac makes it easy to create, collaborate and effectively present your ideas.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -47,6 +45,8 @@
 					<string>Mit Vertrauen kommunizieren. Mit PowerPoint für Mac können Sie Ihre Ideen ganz einfach erstellen, zusammenarbeiten und effektiv präsentieren.</string>
 				</dict>
 			</dict>
+			<key>description</key>
+			<string>Communicate with confidence. PowerPoint for Mac makes it easy to create, collaborate and effectively present your ideas.</string>
 			<key>display_name</key>
 			<string>Microsoft PowerPoint</string>
 			<key>name</key>

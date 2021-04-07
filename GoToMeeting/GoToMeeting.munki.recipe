@@ -21,14 +21,14 @@ A postinstall_script which creates a symlink to the latest version of GoToMeetin
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Productivity</string>
 			<key>description</key>
 			<string>Online meeting, desktop sharing, and video conferencing software.</string>
 			<key>developer</key>
 			<string>Citrix Systems, Inc.</string>
 			<key>display_name</key>
 			<string>GoToMeeting</string>
+			<key>category</key>
+			<string>Productivity</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>de</key>

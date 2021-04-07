@@ -8,8 +8,6 @@
 	<string>com.github.wycomco.override.GoogleChat</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_CATEGORY</key>
-		<string>Social Media</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>generic/apps/google/chat</string>
 		<key>NAME</key>
@@ -20,10 +18,10 @@
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>%MUNKI_CATEGORY%</string>
 			<key>description</key>
 			<string>Desktop app for the redesigned Google Hangouts Chat service.</string>
+			<key>category</key>
+			<string>Social Media</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>

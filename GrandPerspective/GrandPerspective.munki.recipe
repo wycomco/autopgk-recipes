@@ -24,10 +24,10 @@
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Utilities</string>
 			<key>description</key>
 			<string>GrandPerspective is a utility application for Mac OS X that graphically displays the disk usage of a file system.</string>
+			<key>category</key>
+			<string>Utilities</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
