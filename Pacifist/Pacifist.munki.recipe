@@ -8,10 +8,10 @@
     <string>com.github.wycomco.override.Pacifist</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/pacifist</string>
 		<key>NAME</key>
         <string>app_pacifist</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/pacifist</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -20,8 +20,6 @@
 			</array>
 			<key>category</key>
 			<string>Utilities</string>
-			<key>description</key>
-			<string>Pacifist is a shareware application that opens Mac OS X .pkg package files, .dmg disk images, and .zip, .tar, .tar.gz, .tar.bz2, and .xar archives and allows you to extract individual files and folders out of them.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -34,6 +32,8 @@
 					<string>Dienstprogramme</string>
 				</dict>
 			</dict>
+			<key>description</key>
+			<string>Pacifist is a shareware application that opens Mac OS X .pkg package files, .dmg disk images, and .zip, .tar, .tar.gz, .tar.bz2, and .xar archives and allows you to extract individual files and folders out of them.</string>
 			<key>display_name</key>
 			<string>Pacifist</string>
 			<key>name</key>
