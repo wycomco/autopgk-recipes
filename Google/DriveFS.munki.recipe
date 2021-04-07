@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-	<string>Downloads the current release version of GrandPerspective and imports into Munki. This recipe is based on com.github.wardsparadox.munki.googledrivefs and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<string>Downloads the current release version of Google Drive and imports into Munki. This recipe is based on com.github.wardsparadox.munki.googledrivefs and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
     <key>Identifier</key>
     <string>com.github.wycomco.override.googledrivefs</string>
 	<key>Input</key>
@@ -18,16 +18,12 @@
 			<array>
 				<string>generic</string>
 			</array>
-            <key>category</key>
-            <string>Utilities</string>
 			<key>description</key>
 			<string>Drive File Stream lets you:
 • Access, search and manage files on-demand from your computer in seconds.
 • Get just the files you need and make certain files available for offline use later.
 • Access your work even quicker, as your most-used files become available in the background intelligently.
 • Avoid the risk of users downloading all of your company data to their hard drives.</string>
-			<key>developer</key>
-			<string>Google</string>
 			<key>display_name</key>
 			<string>Google Drive FileStream</string>
 			<key>name</key>
@@ -52,6 +48,10 @@
 			<true/>
 			<key>unattended_uninstall</key>
 			<true/>
+            <key>category</key>
+            <string>Utilities</string>
+			<key>developer</key>
+			<string>Google</string>
 		</dict>
 	</dict>
 	<key>ParentRecipe</key>

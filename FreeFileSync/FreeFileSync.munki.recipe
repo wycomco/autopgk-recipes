@@ -22,6 +22,12 @@
 			<string>Utilities</string>
 			<key>description</key>
 			<string>FreeFileSync is a free Open Source software that helps you synchronize files and synchronize folders for Windows, Linux and Mac OS X. It is designed to save your time setting up and running backup jobs while having nice visual feedback along the way.</string>
+			<key>developer</key>
+			<string>Zenju</string>
+			<key>display_name</key>
+			<string>FreeFileSync</string>
+			<key>name</key>
+			<string>%NAME%</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>de</key>
@@ -34,12 +40,6 @@
 				<key>fallback_locale</key>
 				<string>en</string>
 			</dict>
-			<key>developer</key>
-			<string>Zenju</string>
-			<key>display_name</key>
-			<string>FreeFileSync</string>
-			<key>name</key>
-			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
