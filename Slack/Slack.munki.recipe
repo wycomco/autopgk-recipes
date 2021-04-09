@@ -9,24 +9,22 @@
 	<string>com.github.wycomco.override.slack</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/slack</string>
 		<key>NAME</key>
 		<string>app_slack</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/slack</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Social Media</string>
 			<key>description</key>
 			<string>Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go.</string>
-			<key>developer</key>
-			<string>Slack</string>
 			<key>display_name</key>
 			<string>Slack</string>
+			<key>category</key>
+			<string>Social Media</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>de</key>
@@ -39,6 +37,8 @@
 				<key>fallback_locale</key>
 				<string>en</string>
 			</dict>
+			<key>developer</key>
+			<string>Slack</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>postinstall_script</key>

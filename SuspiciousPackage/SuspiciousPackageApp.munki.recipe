@@ -10,16 +10,20 @@
 	<dict>
 		<key>NAME</key>
 		<string>app_suspiciouspackage</string>
+		<key>repo_subdirectory</key>
+		<string>generic/apps/suspiciouspackage</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
 				<string>generic</string>
 			</array>
-			<key>description</key>
-			<string>Suspicious Package: An Application for Inspecting OS X Installer Packages</string>
+			<key>name</key>
+			<string>%NAME%</string>
 			<key>display_name</key>
 			<string>Suspicious Package App</string>
+			<key>description</key>
+			<string>Suspicious Package: An Application for Inspecting OS X Installer Packages</string>
 			<key>developer</key>
 			<string>Mothers Ruin Software</string>
 			<key>category</key>
@@ -38,15 +42,11 @@
 			</dict>
 			<key>minimum_os_version</key>
 			<string>10.14</string>
-			<key>name</key>
-			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
 			<true/>
 		</dict>
-		<key>repo_subdirectory</key>
-		<string>generic/apps/suspiciouspackage</string>
 	</dict>
 	<key>ParentRecipe</key>
 	<string>com.github.poundbangbash.eholtam-recipes.munki.SuspiciousPackageApp</string>

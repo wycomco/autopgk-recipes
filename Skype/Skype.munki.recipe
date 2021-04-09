@@ -8,10 +8,10 @@
 	<string>com.github.wycomco.override.Skype</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/microsoft/skype</string>
 		<key>NAME</key>
 		<string>app_skype</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/microsoft/skype</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -20,8 +20,6 @@
 			</array>
 			<key>category</key>
 			<string>Social Media</string>
-			<key>description</key>
-			<string>Calling, seeing, messaging and sharing with others – wherever they are.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -36,6 +34,8 @@
 			</dict>
 			<key>developer</key>
 			<string>Microsoft</string>
+			<key>description</key>
+			<string>Calling, seeing, messaging and sharing with others – wherever they are.</string>
 			<key>display_name</key>
 			<string>Skype</string>
 			<key>name</key>

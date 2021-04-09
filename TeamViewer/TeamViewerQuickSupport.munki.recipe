@@ -10,12 +10,12 @@ This recipe is based on io.github.hjuutilainen.munki.TeamViewerQS and customized
 	<string>com.github.wycomco.override.TeamViewerQS</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_CATEGORY</key>
-		<string>Utilities</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/teamviewer</string>
 		<key>NAME</key>
 		<string>app_teamviewerqs</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/teamviewer</string>
+		<key>MUNKI_CATEGORY</key>
+		<string>Utilities</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -29,8 +29,6 @@ This recipe is based on io.github.hjuutilainen.munki.TeamViewerQS and customized
 			</array>
 			<key>category</key>
 			<string>%MUNKI_CATEGORY%</string>
-			<key>force_munkiimport</key>
-			<true/>
 			<key>description</key>
 			<string>Get remote support for your computers and mobile devices – whenever you need it.</string>
 			<key>localized_strings</key>
@@ -45,6 +43,8 @@ This recipe is based on io.github.hjuutilainen.munki.TeamViewerQS and customized
 					<string>Erhalten Sie Fernsupport für Ihre Computer und mobilen Geräte – wann immer Sie ihn benötigen.</string>
 				</dict>
 			</dict>
+			<key>force_munkiimport</key>
+			<true/>
 			<key>developer</key>
 			<string>TeamViewer GmbH</string>
 			<key>display_name</key>

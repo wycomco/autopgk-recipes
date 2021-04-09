@@ -8,10 +8,10 @@
     <string>com.github.wycomco.override.trellox</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/trellox</string>
 		<key>NAME</key>
         <string>app_trellox</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/trellox</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -20,8 +20,6 @@
 			</array>
 			<key>category</key>
 			<string>Productivity</string>
-			<key>description</key>
-			<string>An unofficial Trello App for macOS.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -34,6 +32,8 @@
 					<string>Inoffizielle Desktop-App für Trello.</string>
 				</dict>
 			</dict>
+			<key>description</key>
+			<string>An unofficial Trello App for macOS.</string>
             <key>display_name</key>
             <string>TrelloX (Xccello)</string>
  			<key>name</key>

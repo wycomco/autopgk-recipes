@@ -8,20 +8,16 @@
     <string>com.github.wycomco.override.Fusion12</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/vmware</string>
 		<key>NAME</key>
         <string>app_fusion12</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/vmware</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Productivity</string>
-			<key>description</key>
-			<string>VMware Fusion is the easiest, fastest, and most reliable way to run Windows and other x86 based operating systems on a Mac without rebooting.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -34,6 +30,10 @@
 					<string>VMware Fusion ist die einfachste, schnellste und zuverlässigste Möglichkeit, Windows und andere x86-basierte Betriebssysteme auf einem Mac ohne Neustart laufen zu lassen.</string>
 				</dict>
 			</dict>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>VMware Fusion is the easiest, fastest, and most reliable way to run Windows and other x86 based operating systems on a Mac without rebooting.</string>
 			<key>developer</key>
 			<string>VMware</string>
 			<key>display_name</key>

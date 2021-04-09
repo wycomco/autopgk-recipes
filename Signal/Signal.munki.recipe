@@ -8,24 +8,24 @@
 	<string>com.github.wycomco.override.Signal</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_PKGINFO_DISPLAYNAME</key>
-		<string>Signal Desktop</string>
-		<key>MUNKI_PKGINFO_NAME</key>
-		<string>app_signal</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>generic/apps/signal</string>
 		<key>NAME</key>
 		<string>Signal</string>
+		<key>MUNKI_PKGINFO_NAME</key>
+		<string>app_signal</string>
+		<key>MUNKI_PKGINFO_DISPLAYNAME</key>
+		<string>Signal Desktop</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Social Media</string>
             <key>description</key>
             <string>Signal is a cross-platform encrypted messaging service developed by the Signal Foundation and Signal Messenger LLC. First and foremost known for its data economy and end-to-end encryption, it is consistently recommended by security experts and privacy organizations (source: Wikipedia).</string>
+			<key>category</key>
+			<string>Social Media</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>

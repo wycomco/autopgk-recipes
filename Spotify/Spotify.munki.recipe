@@ -8,10 +8,10 @@
 	<string>com.github.wycomco.override.Spotify</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/spotify</string>
 		<key>NAME</key>
 		<string>app_spotify</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/spotify</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -20,8 +20,6 @@
 			</array>
 			<key>category</key>
 			<string>Music</string>
-			<key>description</key>
-			<string>Spotify is a music streaming service offering unlimited streaming of selected music from a range of major and independent record labels.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -36,6 +34,8 @@
 			</dict>
 			<key>developer</key>
 			<string>Spotify</string>
+			<key>description</key>
+			<string>Spotify is a music streaming service offering unlimited streaming of selected music from a range of major and independent record labels.</string>
 			<key>display_name</key>
 			<string>Spotify</string>
 			<key>name</key>

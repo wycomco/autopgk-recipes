@@ -8,20 +8,16 @@
     <string>com.github.wycomco.override.TheUnarchiver</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/theunarchiver</string>
 		<key>NAME</key>
         <string>app_theunarchiver</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+        <string>generic/apps/theunarchiver</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
 				<string>generic</string>
 			</array>
-			<key>category</key>
-			<string>Productivity</string>
-			<key>description</key>
-			<string>The Unarchiver is a much more capable replacement for "Archive Utility.app", the built-in archive unpacker program on Mac OS X. The Unarchiver is designed to handle many more formats than Archive Utility, and to better fit in with the design of the Finder.</string>
 			<key>localized_strings</key>
 			<dict>
 				<key>fallback_locale</key>
@@ -34,8 +30,12 @@
 					<string>The Unarchiver ist ein Ersatz für das in macOS enthaltene Komprimierungsprogramm mit deutlich mehr Fähigkeiten. The Unarchiver versteht mehr Formate und passt sich der grafische Oberfläche des Betriebssystems besser an.</string>
 				</dict>
 			</dict>
+			<key>category</key>
+			<string>Productivity</string>
 			<key>developer</key>
 			<string>MacPaw Inc.</string>
+			<key>description</key>
+			<string>The Unarchiver is a much more capable replacement for "Archive Utility.app", the built-in archive unpacker program on Mac OS X. The Unarchiver is designed to handle many more formats than Archive Utility, and to better fit in with the design of the Finder.</string>
 			<key>display_name</key>
 			<string>The Unarchiver</string>
 			<key>name</key>
