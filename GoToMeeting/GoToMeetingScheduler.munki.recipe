@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+    <string>com.github.wycomco.override.GoToMeetingScheduler</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/gotomeeting</string>
+		<key>NAME</key>
+		<string>app_gotoscheduler</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>GoToMeeting Scheduler.app</string>
+				<string>GoToMeetingSchedulerAutoupdater.app</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>The GoToMeeting Scheduler is used to schedule meetings from your Microsoft Outlook application on your Mac. With the GoToMeeting scheduler, you can perform the following tasks:
+• Add GoToMeeting to your event with just one click
+• Invite attendees through your email contacts
+• Sync meetings, even while you edit them</string>
+			<key>developer</key>
+			<string>LogMeIn</string>
+			<key>display_name</key>
+			<string>GoToMeeting Scheduler</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Der GoToMeeting Scheduler wird verwendet, um Besprechungen aus Ihrer Microsoft Outlook-Anwendung auf Ihrem Mac zu planen. Mit dem GoToMeeting-Scheduler können Sie die folgenden Aufgaben durchführen:
+• Hinzufügen von GoToMeeting zu Ihrem Event mit nur einem Klick
+• Einladen von Teilnehmern über Ihre E-Mail-Kontakte
+• Meetings synchronisieren, auch während Sie sie bearbeiten</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.wycomco.munki.GoToMeetingScheduler</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.wycomco.download.GoToMeetingScheduler</key>
+			<dict>
+				<key>git_hash</key>
+				<string>798bc523ec7a76e90f1859cb75a7791d131bf4b9</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/GoToMeetingScheduler/GoToMeetingScheduler.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>659309a892067a02339b520144b6a356e75a3c6ca55273465e20aaea9574d23d</string>
+			</dict>
+			<key>com.github.wycomco.munki.GoToMeetingScheduler</key>
+			<dict>
+				<key>git_hash</key>
+				<string>798bc523ec7a76e90f1859cb75a7791d131bf4b9</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.wycomco-recipes/GoToMeetingScheduler/GoToMeetingScheduler.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>84469c9cda90d368b7d10390e65853968c98c041f7707de0e3b7530dce99d95b</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
