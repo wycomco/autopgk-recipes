@@ -27,7 +27,7 @@ A postinstall_script which creates a symlink to the latest version of GoToMeetin
 			<key>description</key>
 			<string>Online meeting, desktop sharing, and video conferencing software.</string>
 			<key>developer</key>
-			<string>Citrix Systems, Inc.</string>
+			<string>LogMeIn</string>
 			<key>display_name</key>
 			<string>GoToMeeting</string>
 			<key>localized_strings</key>
@@ -45,12 +45,21 @@ A postinstall_script which creates a symlink to the latest version of GoToMeetin
 			<key>name</key>
 			<string>app_gotomeeting</string>
 			<key>preinstall_script</key>
-			<string>#!/bin/sh
+			<string>#!/bin/bash
 
 echo "Removing old copies of GoToMeeting from the /Applications folder..."
+
 rm -rf /Applications/GoToMeeting\ \(*\).app
 
-exit $?
+if [[ -d "/Applications/GoToMeeting" ]]; then
+    rm -rf "/Applications/GoToMeeting"
+fi
+
+if [[ -f "/Applications/GoToMeeting.app/Contents/Info.plist" ]]; then
+    rm -rf "/Applications/GoToMeeting.app"
+fi
+
+exit 0
 </string>
 			<key>unattended_install</key>
 			<true/>
@@ -65,26 +74,14 @@ exit $?
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-				<key>purge_destination</key>
-				<true/>
+			<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
 			</dict>
 			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
+ 			<string>MunkiPkginfoMerger</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -108,7 +105,7 @@ ln -s "$3/Applications/$NAME ($build).app" "$3/Applications/GoToMeeting.app"
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
-				<string>%dmg_path%</string>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
