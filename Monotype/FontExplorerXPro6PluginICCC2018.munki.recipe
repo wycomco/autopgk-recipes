@@ -6,7 +6,7 @@
 	<string>Downloads the most current FontExplorer X Pro 6 Plugin for InCopy CC 2018 and imports it into Munki.
 	This recipe is based on com.github.foigus.munki.FontExplorerXPro6PluginICCC2018 and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
-	<string>com.github.wycomco.munki.FontExplorerXPro6PluginICCC2018</string>
+	<string>com.github.wycomco.override.FontExplorerXPro6PluginICCC2018</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>

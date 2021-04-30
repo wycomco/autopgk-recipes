@@ -4,7 +4,7 @@
 <dict>
 	<key>Description</key>
 	<string>Downloads the current release version of Apache OpenOffice and imports into Munki.
-	
+
 	This recipe is based on io.github.hjuutilainen.munki.OpenOffice and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
 	<string>com.github.wycomco.override.OpenOffice</string>

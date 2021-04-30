@@ -6,7 +6,7 @@
 	<string>Created with Recipe Robot v0.0.4 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Tunnelblick and imports it into Munki.
-	
+
 This recipe is based on com.github.homebysix.munki.Tunnelblick and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
 	<string>com.github.wycomco.override.Tunnelblick</string>
