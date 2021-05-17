@@ -3,24 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads and imports the latest update build of ARCHICAD 23 INT into munki based on the override-able parameters:  MAJOR_VERSION, LOCALIZATION, RELEASE_TYPE and INSTALL_DIR.
+	<string>Downloads and imports the latest update build of ARCHICAD 24 GER into munki based on the override-able parameters:  MAJOR_VERSION, LOCALIZATION, RELEASE_TYPE and INSTALL_DIR.
 
-MAJOR_VERSION = 23
-LOCALIZATION = INT
+MAJOR_VERSION = 24
+LOCALIZATION = GER
 RELEASE_TYPE = AC (for full version)
 
-INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 23 EN/
+INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 24 DE/
 </string>
 	<key>Identifier</key>
-	<string>com.github.wycomco.override.ARCHICADUpdate23int</string>
+	<string>com.github.wycomco.override.ARCHICADUpdate24ger</string>
 	<key>Input</key>
 	<dict>
 		<key>INSTALL_DIR</key>
-		<string>/Applications/GRAPHISOFT/ARCHICAD %MAJOR_VERSION% EN</string>
+		<string>/Applications/GRAPHISOFT/ARCHICAD %MAJOR_VERSION% DE</string>
 		<key>LOCALIZATION</key>
-		<string>INT</string>
+		<string>GER</string>
 		<key>MAJOR_VERSION</key>
-		<string>23</string>
+		<string>24</string>
 		<key>MINIMUM_OS_VERSION</key>
 		<string>10.13</string>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -30,7 +30,7 @@ INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 23 EN/
 		<key>RELEASE_TYPE</key>
 		<string>AC</string>
 		<key>UPDATE_FOR</key>
-		<string>app_archicad23int</string>
+		<string>app_archicad24ger</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -54,7 +54,7 @@ INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 23 EN/
 					<key>category</key>
 					<string>Grafik und Design</string>
 					<key>description</key>
-					<string>ARCHICAD 23 – Rundum BIM Erleben Sie freies Gestalten, umfassender und effizienter als je zuvor. ARCHICAD 21 wartet mit verbesserten Planungswerkzeugen auf. Es bietet große Erleichterungen im Planungsprozess. Das alles mit spürbar mehr Performance und optimierten multidisziplinären Workflows. So sollte BIM sein.</string>
+					<string>ARCHICAD 24 – Rundum BIM Erleben Sie freies Gestalten, umfassender und effizienter als je zuvor. ARCHICAD 21 wartet mit verbesserten Planungswerkzeugen auf. Es bietet große Erleichterungen im Planungsprozess. Das alles mit spürbar mehr Performance und optimierten multidisziplinären Workflows. So sollte BIM sein.</string>
 					<key>preinstall_alert</key>
 					<dict>
 						<key>alert_detail</key>

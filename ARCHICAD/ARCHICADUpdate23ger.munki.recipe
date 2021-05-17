@@ -30,7 +30,7 @@ INSTALL_DIR = /Applications/GRAPHISOFT/ARCHICAD 23 DE/
 		<key>RELEASE_TYPE</key>
 		<string>AC</string>
 		<key>UPDATE_FOR</key>
-		<string>app_archicad22ger</string>
+		<string>app_archicad23ger</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
