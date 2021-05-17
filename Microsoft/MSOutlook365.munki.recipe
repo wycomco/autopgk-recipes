@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>This recipe downloads and imports the full installer pkg for Microsoft Outlook 365 into Munki
+	<key>Description</key>
+	<string>This recipe downloads and imports the full installer pkg for Microsoft Outlook 365 into Munki
 
 	This is accomplished via the Office 365 recipes from rtrouton-recipes.
 
@@ -11,14 +11,14 @@
 
     This recipe is based on com.github.dataJAR-recipes.munki.Microsoft Outlook 365 and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.
 	</string>
-    <key>Identifier</key>
-    <string>com.github.wycomco.override.MSOutlook365</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.MSOutlook365</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-        <string>app_outlook365</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/microsoft/office365</string>
+		<string>generic/apps/microsoft/office365</string>
+		<key>NAME</key>
+		<string>app_outlook365</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -33,10 +33,12 @@
 			</array>
 			<key>category</key>
 			<string>Productivity</string>
+			<key>description</key>
+			<string>Get a clear view of your email, calendars, contacts and even the weather to connect with others more effectively. Designed for Mac, Outlook efficiently keeps track of your digital life.</string>
+			<key>display_name</key>
+			<string>Microsoft Outlook</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -44,11 +46,9 @@
 					<key>description</key>
 					<string>Verschaffen Sie sich einen klaren Überblick über Ihre E-Mails, Kalender, Kontakte und sogar das Wetter, um effektiver mit anderen Kontakt aufzunehmen. Outlook wurde für Mac entwickelt und verfolgt effizient Ihr digitales Leben.</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-			<key>description</key>
-			<string>Get a clear view of your email, calendars, contacts and even the weather to connect with others more effectively. Designed for Mac, Outlook efficiently keeps track of your digital life.</string>
-			<key>display_name</key>
-			<string>Microsoft Outlook</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -86,11 +86,11 @@
 			<key>com.github.rtrouton.pkg.microsoftoutlook365</key>
 			<dict>
 				<key>git_hash</key>
-				<string>8a29db2944790f4a29cc98618e0d2e87c96668d5</string>
+				<string>90f11cb9012473899a2640d445553ebbe86882a6</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/MicrosoftOutlook365/MicrosoftOutlook365.pkg.recipe</string>
 				<key>sha256_hash</key>
-				<string>64658df5769a8f3d56d93f830ed900bea39ceffddfd7fdcd4e53e160792ff390</string>
+				<string>233cd65259702f53ed01c8d0471d2ebac34812e8704cbc6c9e81b542241416b2</string>
 			</dict>
 		</dict>
 	</dict>

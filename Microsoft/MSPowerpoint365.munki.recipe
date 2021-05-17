@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>This recipe downloads and imports the full installer pkg for Microsoft PowerPoint 365 into Munki
+	<key>Description</key>
+	<string>This recipe downloads and imports the full installer pkg for Microsoft PowerPoint 365 into Munki
 
 	This is accomplished via the Office 365 recipes from rtrouton-recipes.
 
@@ -11,14 +11,14 @@
 
     This recipe is based on com.github.dataJAR-recipes.munki.Microsoft PowerPoint 365 and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
 	</string>
-    <key>Identifier</key>
-    <string>com.github.wycomco.override.MSPowerPoint365</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.MSPowerPoint365</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-        <string>app_powerpoint365</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/microsoft/office365</string>
+		<string>generic/apps/microsoft/office365</string>
+		<key>NAME</key>
+		<string>app_powerpoint365</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -33,10 +33,12 @@
 			</array>
 			<key>category</key>
 			<string>Productivity</string>
+			<key>description</key>
+			<string>Communicate with confidence. PowerPoint for Mac makes it easy to create, collaborate and effectively present your ideas.</string>
+			<key>display_name</key>
+			<string>Microsoft PowerPoint</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -44,11 +46,9 @@
 					<key>description</key>
 					<string>Mit Vertrauen kommunizieren. Mit PowerPoint für Mac können Sie Ihre Ideen ganz einfach erstellen, zusammenarbeiten und effektiv präsentieren.</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-			<key>description</key>
-			<string>Communicate with confidence. PowerPoint for Mac makes it easy to create, collaborate and effectively present your ideas.</string>
-			<key>display_name</key>
-			<string>Microsoft PowerPoint</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -67,8 +67,10 @@
 		<dict>
 			<key>com.github.dataJAR-recipes.munki.Microsoft PowerPoint 365</key>
 			<dict>
+				<key>git_hash</key>
+				<string>fe5050673440c54399708e4f3aa2063f40a29293</string>
 				<key>path</key>
-				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/Microsoft PowerPoint 365/Microsoft Powerpoint 365.munki.recipe</string>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes/Microsoft PowerPoint 365/Microsoft PowerPoint 365.munki.recipe</string>
 				<key>sha256_hash</key>
 				<string>a9c60080e39071f801c7c6189c08c0c375a2601eb7cea8483e221190ad664825</string>
 			</dict>
@@ -84,11 +86,11 @@
 			<key>com.github.rtrouton.pkg.microsoftpowerpoint365</key>
 			<dict>
 				<key>git_hash</key>
-				<string>8a29db2944790f4a29cc98618e0d2e87c96668d5</string>
+				<string>90f11cb9012473899a2640d445553ebbe86882a6</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/MicrosoftPowerPoint365/MicrosoftPowerPoint365.pkg.recipe</string>
 				<key>sha256_hash</key>
-				<string>ebfa49460997626cbb0a12296c562ec8e7d4dc02480d93302fc766645db13f25</string>
+				<string>c627395960f40221cdde1f42aa52694270f32f768ae0f67804c0985f297c9e1b</string>
 			</dict>
 		</dict>
 	</dict>

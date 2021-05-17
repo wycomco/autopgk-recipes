@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>This recipe downloads and imports the full installer pkg for Microsoft Excel 365 into Munki
+	<key>Description</key>
+	<string>This recipe downloads and imports the full installer pkg for Microsoft Excel 365 into Munki
 
 	This is accomplished via the Office 365 recipes from rtrouton-recipes.
 
@@ -11,14 +11,14 @@
 
     This recipe is based on com.github.dataJAR-recipes.munki.Microsoft Excel 365 and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
 	</string>
-    <key>Identifier</key>
-    <string>com.github.wycomco.override.MSExcel365</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.MSExcel365</string>
 	<key>Input</key>
 	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/microsoft/office365</string>
 		<key>NAME</key>
-        <string>app_excel365</string>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/microsoft/office365</string>
+		<string>app_excel365</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -33,10 +33,12 @@
 			</array>
 			<key>category</key>
 			<string>Productivity</string>
+			<key>description</key>
+			<string>See your data in new, intuitive ways. Powerful charts, graphs, and keyboard shortcuts turn columns of numbers into valuable information, so you can work easier.</string>
+			<key>display_name</key>
+			<string>Microsoft Excel</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -44,11 +46,9 @@
 					<key>description</key>
 					<string>Sehen Sie Ihre Daten auf neue, intuitive Weise. Leistungsfähige Diagramme, Graphen und Tastenkombinationen machen aus Zahlenspalten wertvolle Informationen, damit Sie einfacher arbeiten können.</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-			<key>description</key>
-			<string>See your data in new, intuitive ways. Powerful charts, graphs, and keyboard shortcuts turn columns of numbers into valuable information, so you can work easier.</string>
-			<key>display_name</key>
-			<string>Microsoft Excel</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -86,11 +86,11 @@
 			<key>com.github.rtrouton.pkg.microsoftexcel365</key>
 			<dict>
 				<key>git_hash</key>
-				<string>8a29db2944790f4a29cc98618e0d2e87c96668d5</string>
+				<string>90f11cb9012473899a2640d445553ebbe86882a6</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/MicrosoftExcel365/MicrosoftExcel365.pkg.recipe</string>
 				<key>sha256_hash</key>
-				<string>adb5b2a1440587ba36ed80d21c1f26a3d718b3545ead24dbb34a2eeb633712b8</string>
+				<string>9cd120e9ed4b49a37a89df1b2209ba8851db38ea0614168e6ac30094767af8f2</string>
 			</dict>
 		</dict>
 	</dict>

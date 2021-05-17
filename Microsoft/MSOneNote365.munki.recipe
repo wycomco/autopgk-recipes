@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>This recipe downloads and imports the full installer pkg for Microsoft OneNote 365 into Munki
+	<key>Description</key>
+	<string>This recipe downloads and imports the full installer pkg for Microsoft OneNote 365 into Munki
 
 	This is accomplished via the Office 365 recipes from rtrouton-recipes.
 
@@ -11,14 +11,14 @@
 
     This recipe is based on com.github.dataJAR-recipes.munki.Microsoft OneNote 365 and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
 	</string>
-    <key>Identifier</key>
-    <string>com.github.wycomco.override.MSOneNote365</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.MSOneNote365</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-        <string>app_onenote365</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-        <string>generic/apps/microsoft/office365</string>
+		<string>generic/apps/microsoft/office365</string>
+		<key>NAME</key>
+		<string>app_onenote365</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -33,10 +33,12 @@
 			</array>
 			<key>category</key>
 			<string>Productivity</string>
+			<key>description</key>
+			<string>Your world, organized. Get organized in notebooks you can divide into sections and pages. With easy navigation and search, you’ll always find your notes right where you left them.</string>
+			<key>display_name</key>
+			<string>Microsoft OneNote</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -44,15 +46,13 @@
 					<key>description</key>
 					<string>Ihre Welt, organisiert. Ordnen Sie sich in Notizbüchern an, die Sie in Abschnitte und Seiten unterteilen können. Mit der einfachen Navigation und Suche finden Sie Ihre Notizen immer dort, wo Sie sie hinterlassen haben.</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-			<key>description</key>
-			<string>Your world, organized. Get organized in notebooks you can divide into sections and pages. With easy navigation and search, you’ll always find your notes right where you left them.</string>
-			<key>display_name</key>
-			<string>Microsoft OneNote</string>
 			<key>name</key>
 			<string>%NAME%</string>
-            <key>postinstall_script</key>
-            <string>#!/bin/sh
+			<key>postinstall_script</key>
+			<string>#!/bin/sh
 if [ -d "/Library/Application Support/Microsoft/MAU2.0" ]; then
    launchctl remove com.microsoft.autoupdate.helper
    launchctl remove com.microsoft.update.agent
@@ -101,11 +101,11 @@ exit 0</string>
 			<key>com.github.rtrouton.pkg.microsoftonenote365</key>
 			<dict>
 				<key>git_hash</key>
-				<string>8a29db2944790f4a29cc98618e0d2e87c96668d5</string>
+				<string>90f11cb9012473899a2640d445553ebbe86882a6</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/MicrosoftOneNote365/MicrosoftOneNote365.pkg.recipe</string>
 				<key>sha256_hash</key>
-				<string>ca49bdbfeadd303c7161ded60808cfa595d6482f0d9026ac48cc0dbf2b4d39ac</string>
+				<string>83361544042056379a42ce66d7c3b1a9e86ef831f87fa271572f03dd80d151f8</string>
 			</dict>
 		</dict>
 	</dict>

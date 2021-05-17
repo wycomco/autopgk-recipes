@@ -10,14 +10,14 @@ This recipe is based on com.github.autopkg.munki.SkypeForBusiness and customized
 	<string>com.github.wycomco.override.SkypeForBusiness</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>upd_skypeforbusiness</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/microsoft/skypeforbusiness</string>
 		<key>CHANNEL</key>
 		<string>Production</string>
 		<key>LOCALE_ID</key>
 		<string>1031</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/microsoft/skypeforbusiness</string>
+		<key>NAME</key>
+		<string>upd_skypeforbusiness</string>
 		<key>PRODUCT</key>
 		<string>SkypeForBusiness</string>
 		<key>VERSION</key>
@@ -34,30 +34,30 @@ This recipe is based on com.github.autopkg.munki.SkypeForBusiness and customized
 			<array>
 				<string>generic</string>
 			</array>
-            <key>category</key>
-            <string>Productivity</string>
-            <key>description</key>
-            <string>Skype for Business is an instant messaging client (IM) used with Skype for Business Server or with Skype for Business Online (available with Microsoft Office 365).[1] Skype for Business is enterprise software. (Source: Wikipedia)</string>
-        	<key>localized_strings</key>
-			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
-				<key>de</key>
-				<dict>
-					<key>description</key>
-					<string>Skype for Business ist eine proprietäre Anwendung von Microsoft, die verschiedene Kommunikationsmedien (Real-time Collaboration, IP-Telefonie, Videokonferenz) in einer einheitlichen Anwendungsumgebung zusammenfasst. (Quelle: Wikipedia)</string>
-					<key>category</key>
-					<string>Produktivität</string>
-				</dict>
-			</dict>
-			<key>display_name</key>
-			<string>Skype for Business</string>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>description</key>
+			<string>Skype for Business is an instant messaging client (IM) used with Skype for Business Server or with Skype for Business Online (available with Microsoft Office 365).[1] Skype for Business is enterprise software. (Source: Wikipedia)</string>
 			<key>developer</key>
 			<string>Microsoft</string>
+			<key>display_name</key>
+			<string>Skype for Business</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Skype for Business ist eine proprietäre Anwendung von Microsoft, die verschiedene Kommunikationsmedien (Real-time Collaboration, IP-Telefonie, Videokonferenz) in einer einheitlichen Anwendungsumgebung zusammenfasst. (Quelle: Wikipedia)</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>postinstall_script</key>
-            <string>#!/bin/sh
+			<string>#!/bin/sh
 if [ -d "/Library/Application Support/Microsoft/MAU2.0" ]; then
    launchctl remove com.microsoft.autoupdate.helper
    launchctl remove com.microsoft.update.agent
@@ -71,14 +71,14 @@ if [ -d "/Library/Application Support/Microsoft/MAU2.0" ]; then
 fi
 
 exit 0</string>
-			<key>update_for</key>
-			<array>
-				<string>app_skypeforbusiness</string>
-			</array>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
 			<true/>
+			<key>update_for</key>
+			<array>
+				<string>app_skypeforbusiness</string>
+			</array>
 		</dict>
 	</dict>
 	<key>ParentRecipe</key>
