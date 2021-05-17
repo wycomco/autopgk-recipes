@@ -5,47 +5,51 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Parallels Desktop and imports it into Munki. This recipe has been tested with major versions 9 through 16.
 
-    For major versions 9 through 15, leave the PLATFORM_ARCH blank in your override.
+For major version 16, set the PLATFORM_ARCH in your override to either "intel" or "m1" depending on your desired architecture. Create multiple overrides if you wish to offer both flavors via Munki.
 
-	This recipe is based on com.github.homebysix.munki.ParallelsDesktop and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+This recipe is based on com.github.homebysix.munki.ParallelsDesktop and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
-	<string>com.github.wycomco.override.ParallelsDesktop15</string>
+	<string>com.github.wycomco.override.ParallelsDesktop16</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
-		<string>15</string>
+		<string>16</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>generic/apps/parallels/%NAME%</string>
 		<key>NAME</key>
-		<string>app_parallelsdesktop15</string>
+		<string>app_parallelsdesktop16</string>
+		<key>PLATFORM_ARCH</key>
+		<string>m1</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
 				<string>generic</string>
 			</array>
+			<key>category</key>
+			<string>Productivity</string>
 			<key>description</key>
 			<string>Virtualization tool for running Windows apps without rebooting.</string>
-    		<key>category</key>
-			<string>Productivity</string>
-			<key>localized_strings</key>
-			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
-				<key>de</key>
-				<dict>
-					<key>description</key>
-					<string>Virtualisierungswerkzeug zum Ausführen von Windows-Anwendungen ohne Neustart.</string>
-					<key>category</key>
-					<string>Produktivität</string>
-				</dict>
-			</dict>
 			<key>developer</key>
 			<string>Parallels, Inc.</string>
 			<key>display_name</key>
-			<string>Parallels Desktop 15</string>
+			<string>Parallels Desktop 16</string>
+			<key>installable_condition</key>
+			<string>(arch == "arm64")</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Virtualisierungswerkzeug zum Ausführen von Windows-Anwendungen ohne Neustart.</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
 			<key>minimum_os_version</key>
-			<string>10.12</string>
+			<string>10.13.6</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>postinstall_script</key>
@@ -69,29 +73,29 @@ chflags nohidden "/Applications/Parallels Desktop.app"
 			<key>com.github.homebysix.download.ParallelsDesktop</key>
 			<dict>
 				<key>git_hash</key>
-				<string>c265e8560130f66c2674fca346139224fac46657</string>
+				<string>5a91270a93dd9f0600fea752e5d23754115e1bcc</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Parallels/ParallelsDesktop.download.recipe</string>
 				<key>sha256_hash</key>
-				<string>130324823b1849c24ce68c0d1f820337d8740589ff180bdbf1049fd51cbf19f2</string>
+				<string>0cb03def3c6eb5c9444dc68dd49745ad1be22530d5537ffe2ac163385e2c9401</string>
 			</dict>
 			<key>com.github.homebysix.munki.ParallelsDesktop</key>
 			<dict>
 				<key>git_hash</key>
-				<string>05c56e9d3edf5cc18ce7a94e68568cb42ae3c515</string>
+				<string>5a91270a93dd9f0600fea752e5d23754115e1bcc</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Parallels/ParallelsDesktop.munki.recipe</string>
 				<key>sha256_hash</key>
-				<string>c10cb35890fbd4ae81c681ca5f6d3eeb91570df8fc0abca23b40768c0c4ac1db</string>
+				<string>876f1d531e6edbacf8da71151af96ee8e2abf52e9740b8fc6b5e0bf1be234156</string>
 			</dict>
 			<key>com.github.homebysix.pkg.ParallelsDesktop</key>
 			<dict>
 				<key>git_hash</key>
-				<string>05c56e9d3edf5cc18ce7a94e68568cb42ae3c515</string>
+				<string>5a91270a93dd9f0600fea752e5d23754115e1bcc</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Parallels/ParallelsDesktop.pkg.recipe</string>
 				<key>sha256_hash</key>
-				<string>ed05cd9a703515028cd2cee778a118c7cc52b277ebd8128a4ebd559f9f8669fa</string>
+				<string>a3b2bba232163a303ae229681edc86e26da84f999642bf8966344c20e62a3077</string>
 			</dict>
 		</dict>
 	</dict>

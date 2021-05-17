@@ -8,12 +8,12 @@
 	<string>com.github.wycomco.override.TeamViewer</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>app_teamviewer</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/teamviewer</string>
 		<key>MUNKI_CATEGORY</key>
 		<string>Utilities</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/teamviewer</string>
+		<key>NAME</key>
+		<string>app_teamviewer</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -24,10 +24,12 @@
 			<string>%MUNKI_CATEGORY%</string>
 			<key>description</key>
 			<string>All-In-One Solution for Remote Access and Support over the Internet.</string>
+			<key>developer</key>
+			<string>TeamViewer GmbH</string>
+			<key>display_name</key>
+			<string>TeamViewer</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -35,11 +37,9 @@
 					<key>description</key>
 					<string>Komplettlösung für Fernzugriff und Support über das Internet.</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-			<key>developer</key>
-			<string>TeamViewer GmbH</string>
-			<key>display_name</key>
-			<string>TeamViewer</string>
 			<key>minimum_os_version</key>
 			<string>10.13.6</string>
 			<key>name</key>
@@ -70,20 +70,20 @@
 			<key>io.github.hjuutilainen.munki.TeamViewer</key>
 			<dict>
 				<key>git_hash</key>
-				<string>d15245438b6a54e819140cf9810008d4ebab2fdd</string>
+				<string>7ebae39ce12c2f5b25faaca310ee0b2b67176041</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/TeamViewer/TeamViewer.munki.recipe</string>
 				<key>sha256_hash</key>
-				<string>a83b309318023b238bb11b3864c0e5c78c42bae269cd8b6cd8d9855ad8d50317</string>
+				<string>9c44e5b21298d41c19da0a0e7fdc5200f88c6d32a34a686109b617e1e534b3ca</string>
 			</dict>
 			<key>io.github.hjuutilainen.pkg.TeamViewer</key>
 			<dict>
 				<key>git_hash</key>
-				<string>d15245438b6a54e819140cf9810008d4ebab2fdd</string>
+				<string>4fd20cf7d08bf8ebefb9c18029296bac86f8f4af</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/TeamViewer/TeamViewer.pkg.recipe</string>
 				<key>sha256_hash</key>
-				<string>d219b65bc42ee621d93c8d62a7a3e0c580a76a9e35680de644dc47aa8c6c3a67</string>
+				<string>030c45a9c17e5c4a86d56b6a551301fb8649c578f0e97c97b513653c8d5a2c43</string>
 			</dict>
 		</dict>
 	</dict>

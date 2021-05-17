@@ -22,14 +22,16 @@
 			<array>
 				<string>generic</string>
 			</array>
-			<key>description</key>
-			<string>The Zoom app provides cloud-hosted video conferencing, plus online meetings and group messaging.</string>
 			<key>category</key>
 			<string>Social Media</string>
+			<key>description</key>
+			<string>The Zoom app provides cloud-hosted video conferencing, plus online meetings and group messaging.</string>
+			<key>developer</key>
+			<string>Zoom Video Communications, Inc.</string>
+			<key>display_name</key>
+			<string>Zoom</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -37,11 +39,9 @@
 					<key>description</key>
 					<string>Die Zoom-App bietet in der Cloud gehostete Videokonferenzen sowie Online-Besprechungen und Gruppenmeldungen.</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-			<key>developer</key>
-			<string>Zoom Video Communications, Inc.</string>
-			<key>display_name</key>
-			<string>Zoom</string>
 			<key>minimum_os_version</key>
 			<string>10.9</string>
 			<key>name</key>
@@ -76,11 +76,11 @@ rm -rf /Applications/zoom.us.app
 			<key>com.github.homebysix.munki.Zoom</key>
 			<dict>
 				<key>git_hash</key>
-				<string>011b0986bc7832a7f7c9051206a2f150b1df98c4</string>
+				<string>d1d1f9108b8444d25efb2b03c3f5c9b76c6c28c4</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Zoom/Zoom.munki.recipe</string>
 				<key>sha256_hash</key>
-				<string>5f522da60defe19edc21b88299ca3591592961d5c7d30a686829e5883fa5a016</string>
+				<string>c77bbc1d51843f7e97c2a0ac2854e429af84dcd1abccbaf7c91e8e5497d14ba7</string>
 			</dict>
 			<key>com.github.homebysix.pkg.Zoom</key>
 			<dict>
