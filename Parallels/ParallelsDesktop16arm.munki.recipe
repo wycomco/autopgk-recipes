@@ -9,7 +9,7 @@ For major version 16, set the PLATFORM_ARCH in your override to either "intel" o
 
 This recipe is based on com.github.homebysix.munki.ParallelsDesktop and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
-	<string>com.github.wycomco.override.ParallelsDesktop16</string>
+	<string>com.github.wycomco.override.ParallelsDesktop16arm</string>
 	<key>Input</key>
 	<dict>
 		<key>MAJOR_VERSION</key>
@@ -17,7 +17,7 @@ This recipe is based on com.github.homebysix.munki.ParallelsDesktop and customiz
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>generic/apps/parallels/%NAME%</string>
 		<key>NAME</key>
-		<string>app_parallelsdesktop16</string>
+		<string>app_parallelsdesktop16_arm</string>
 		<key>PLATFORM_ARCH</key>
 		<string>m1</string>
 		<key>pkginfo</key>
