@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of wymanage Intercom and imports it into a Munki repo. This recipe is based on com.gitlab.wycomco.munki.wymanage and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.wymanage</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/wymanage</string>
+		<key>NAME</key>
+		<string>app_wymanage</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>NAME</key>
+			<string>%NAME%</string>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>Intercom component for wy-manage</string>
+			<key>developer</key>
+			<string>wycomco GmbH</string>
+			<key>display_name</key>
+			<string>wy-manage</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+					<key>description</key>
+					<string>Intercom-Komponente für wy-manage</string>
+				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+			</dict>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.gitlab.wycomco.munki.wymanage</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.gitlab.wycomco.download.wymanage</key>
+			<dict>
+				<key>git_hash</key>
+				<string>eda1e4756918d3039930fca8102d749b5b5eb7f3</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/de.wycomco.gitlab.wymanage.autopkg-recipes/wymanage.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>0880acfc85805a7c7eb568ad7ca70971fee88aeaa6b21d1388dc913542c2f478</string>
+			</dict>
+			<key>com.gitlab.wycomco.munki.wymanage</key>
+			<dict>
+				<key>git_hash</key>
+				<string>eda1e4756918d3039930fca8102d749b5b5eb7f3</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/de.wycomco.gitlab.wymanage.autopkg-recipes/wymanage.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>4797528dc087774a6c6c54249272321f89fbbd9af218d46fcd065b369d272929</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
