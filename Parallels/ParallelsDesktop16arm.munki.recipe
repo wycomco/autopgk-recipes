@@ -52,6 +52,8 @@ This recipe is based on com.github.homebysix.munki.ParallelsDesktop and customiz
 			<string>10.13.6</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>icon_name</key>
+			<string>app_parallelsdesktop15</string>
 			<key>postinstall_script</key>
 			<string>#!/bin/bash
 chflags nohidden "/Applications/Parallels Desktop.app"
