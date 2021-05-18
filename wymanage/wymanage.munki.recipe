@@ -57,11 +57,11 @@
 			<key>com.gitlab.wycomco.download.wymanage</key>
 			<dict>
 				<key>git_hash</key>
-				<string>eda1e4756918d3039930fca8102d749b5b5eb7f3</string>
+				<string>44574134f799da845ceff334b22d6b8b56ece51f</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/de.wycomco.gitlab.wymanage.autopkg-recipes/wymanage.download.recipe</string>
 				<key>sha256_hash</key>
-				<string>0880acfc85805a7c7eb568ad7ca70971fee88aeaa6b21d1388dc913542c2f478</string>
+				<string>4a4f733525939cb4f038fb055da2cf5be59ba674e58c9224e0432e2c2c842edb</string>
 			</dict>
 			<key>com.gitlab.wycomco.munki.wymanage</key>
 			<dict>
