@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release version of Grammarly and imports into Munki. This recipe is based on com.github.homebysix.munki.Grammarly and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.Grammarly</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/grammarly</string>
+		<key>NAME</key>
+		<string>app_grammarly</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>description</key>
+			<string>App and web service for correcting grammatical issues and detecting plagarism.</string>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>description</key>
+					<string>App und Webservice zur Korrektur von grammatikalischen Fehlern und zur Erkennung von Plagiaten.</string>
+					<key>category</key>
+					<string>Dienstprogramme</string>
+				</dict>
+			</dict>
+			<key>developer</key>
+			<string>Grammarly, Inc</string>
+			<key>display_name</key>
+			<string>Grammarly</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.homebysix.munki.Grammarly</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict/>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.homebysix.download.Grammarly</key>
+			<dict>
+				<key>git_hash</key>
+				<string>9b0234d95b80ae32897d954ef507d569599a6918</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Grammarly/Grammarly.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>e288ab9fad92d3d2d49416b1a1d4f3fc8f1e2bdbb328fd1586cf1dbd2f8ebd51</string>
+			</dict>
+			<key>com.github.homebysix.munki.Grammarly</key>
+			<dict>
+				<key>git_hash</key>
+				<string>64fe8eca444a5dc86c33278282a39d0ca5e30073</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Grammarly/Grammarly.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>6a1a8714104c4a847fb2927f5abff829958965d2c976de74816b351ffbab0a14</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
