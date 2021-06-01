@@ -14,7 +14,7 @@
 		<string>app_wymanage</string>
 		<key>pkginfo</key>
 		<dict>
-			<key>NAME</key>
+			<key>name</key>
 			<string>%NAME%</string>
 			<key>catalogs</key>
 			<array>
