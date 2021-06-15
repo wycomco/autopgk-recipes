@@ -47,6 +47,10 @@
 			<true/>
 			<key>unattended_uninstall</key>
 			<true/>
+            <key>supported_architectures</key>
+            <array>
+                <string>%ARCH%</string>
+            </array>
 		</dict>
 	</dict>
 	<key>ParentRecipe</key>
