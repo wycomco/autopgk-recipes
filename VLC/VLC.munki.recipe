@@ -3,15 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest VLC disk image and imports into Munki. This recipe is based on com.github.autopkg.munki.VLC and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<string>Downloads latest VLC disk image and imports into Munki. This recipe is based on com.github.autopkg.munki.VLC and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
+        This recipe defaults supported_architectures to x86_64.
+        If you override VLC.download.recipe to %SPARKLE_FEED_URL% to
+        "https://update.videolan.org/vlc/sparkle/vlc-intel64.xml", update %ARCH% to "arm64".</string>
 	<key>Identifier</key>
 	<string>com.github.wycomco.override.VLC</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>app_vlc-media-player</string>
+		<key>ARCH</key>
+		<string>x86_64</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>generic/apps/videolan/vlc-media-player</string>
+		<key>NAME</key>
+		<string>app_vlc-media-player</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -20,22 +25,22 @@
 			</array>
 			<key>category</key>
 			<string>Video</string>
+			<key>description</key>
+			<string>VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.</string>
+			<key>developer</key>
+			<string>VideoLAN</string>
+			<key>display_name</key>
+			<string>VLC Media Player</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>description</key>
 					<string>VLC ist ein freier und quelloffener plattformübergreifender Multimedia-Player und Framework, der die meisten Multimedia-Dateien sowie DVD, Audio-CD, VCD und verschiedene Streaming-Protokolle abspielt.</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-			<key>developer</key>
-			<string>VideoLAN</string>
-			<key>description</key>
-			<string>VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.</string>
-			<key>display_name</key>
-			<string>VLC Media Player</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -55,20 +60,20 @@
 			<key>com.github.autopkg.download.VLC</key>
 			<dict>
 				<key>git_hash</key>
-				<string>72aaf497ded4fd743905da2a5383a0a990067d39</string>
+				<string>c25cf8551a8aff882b4a8ac2b1d0990f50050869</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/VLC/VLC.download.recipe</string>
 				<key>sha256_hash</key>
-				<string>726256d1486e993b9ce49f292be6b3ffe14a51a3a2bb31d8a7c2e355428a1ad4</string>
+				<string>d8e58df45692a7271215090263504773083127ca8874cd65c9d3401bf7038188</string>
 			</dict>
 			<key>com.github.autopkg.munki.VLC</key>
 			<dict>
 				<key>git_hash</key>
-				<string>37fe16ce9cc765bddba74fb6abc474b6e1eeaa83</string>
+				<string>2989d25ecc83820f00235dda7019ee4e66950e68</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/VLC/VLC.munki.recipe</string>
 				<key>sha256_hash</key>
-				<string>ba51394e291074d2a4bb89d7138705e6824a4268f1ca18949e27de59cb491508</string>
+				<string>6352adc241aa4a113b99f7a18addf5638b54c0938c5dd5ed42624df1d0f84988</string>
 			</dict>
 		</dict>
 	</dict>
