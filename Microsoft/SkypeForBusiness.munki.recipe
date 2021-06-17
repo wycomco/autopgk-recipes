@@ -90,11 +90,11 @@ exit 0</string>
 			<key>MSOfficeMacURLandUpdateInfoProvider</key>
 			<dict>
 				<key>git_hash</key>
-				<string>b628c928cb567779c55c5511ef1a220caa8e0618</string>
+				<string>f33f7baebfa2312a20b523e4cacaa2fe0b62da98</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacURLandUpdateInfoProvider.py</string>
 				<key>sha256_hash</key>
-				<string>efde8df5ceb73802c25b9c69c7d8b7af9c646a62079ba7a731539793bdef8f97</string>
+				<string>344a3b8034cd7329c24461b5835406f2ea898d08fb9c9c22dcb26651c4c2a9ba</string>
 			</dict>
 		</dict>
 		<key>parent_recipes</key>

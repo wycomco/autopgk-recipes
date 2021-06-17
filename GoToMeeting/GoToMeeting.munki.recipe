@@ -75,11 +75,11 @@ exit 0
 			<key>GoToMeetingURLProvider</key>
 			<dict>
 				<key>git_hash</key>
-				<string>5167bdbd83ceacab1a0d7862ecc42e35ecdb7c17</string>
+				<string>dc086969ec741e70edcf24774d50fba627732496</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/GoToMeeting/GoToMeetingURLProvider.py</string>
 				<key>sha256_hash</key>
-				<string>4548dc2a392545608570eeaee42630592dacd88d1f397e1413cf70e307c2a8cd</string>
+				<string>17123e388d3ef77c14df5d6aa5b0b70e5e2139e9a86a140f29c80cfe17282c3a</string>
 			</dict>
 		</dict>
 		<key>parent_recipes</key>
