@@ -5,8 +5,9 @@
 	<key>Description</key>
 	<string>Downloads latest VLC disk image and imports into Munki. This recipe is based on com.github.autopkg.munki.VLC and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.
         This recipe defaults supported_architectures to x86_64.
-        If you override VLC.download.recipe to %SPARKLE_FEED_URL% to
-        "https://update.videolan.org/vlc/sparkle/vlc-intel64.xml", update %ARCH% to "arm64".</string>
+        If you override SPARKLE_FEED_URL to
+        "https://update.videolan.org/vlc/sparkle/vlc-intel64.xml", be sure to
+        adjust ARCH to "arm64".</string>
 	<key>Identifier</key>
 	<string>com.github.wycomco.override.VLC</string>
 	<key>Input</key>
@@ -43,14 +44,14 @@
 			</dict>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>supported_architectures</key>
+			<array>
+				<string>%ARCH%</string>
+			</array>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>
 			<true/>
-            <key>supported_architectures</key>
-            <array>
-                <string>%ARCH%</string>
-            </array>
 		</dict>
 	</dict>
 	<key>ParentRecipe</key>
@@ -64,20 +65,20 @@
 			<key>com.github.autopkg.download.VLC</key>
 			<dict>
 				<key>git_hash</key>
-				<string>c25cf8551a8aff882b4a8ac2b1d0990f50050869</string>
+				<string>84bf53121f514e3429003ae381c6247dc90ebcde</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/VLC/VLC.download.recipe</string>
 				<key>sha256_hash</key>
-				<string>d8e58df45692a7271215090263504773083127ca8874cd65c9d3401bf7038188</string>
+				<string>8d4cff49a581f88b1eb3711377e6765100f09fa74f5adfa2787d75e952a64823</string>
 			</dict>
 			<key>com.github.autopkg.munki.VLC</key>
 			<dict>
 				<key>git_hash</key>
-				<string>2989d25ecc83820f00235dda7019ee4e66950e68</string>
+				<string>84bf53121f514e3429003ae381c6247dc90ebcde</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/VLC/VLC.munki.recipe</string>
 				<key>sha256_hash</key>
-				<string>6352adc241aa4a113b99f7a18addf5638b54c0938c5dd5ed42624df1d0f84988</string>
+				<string>4d0b91a32c61433d9b71fe366e5e879b95c8d9bc2ea01a3793e708f50467cf99</string>
 			</dict>
 		</dict>
 	</dict>
