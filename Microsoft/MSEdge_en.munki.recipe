@@ -5,17 +5,17 @@
         <key>Description</key>
         <string>Downloads Microsoft Edge and imports into Munki. This recipe is based on com.github.autopkg.munki.MSEdge and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
         <key>Identifier</key>
-        <string>com.github.wycomco.override.MSEdge</string>
+        <string>com.github.wycomco.override.MSEdge_en</string>
 	<key>Input</key>
 	<dict>
 		<key>CHANNEL</key>
 		<string>Production</string>
 		<key>LOCALE_ID</key>
-		<string>1031</string>
+		<string>1033</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>generic/apps/microsoft/edge</string>
 		<key>NAME</key>
-		<string>app_edge</string>
+		<string>app_edge_en</string>
 		<key>PRODUCT</key>
 		<string>Edge</string>
 		<key>VERSION</key>
@@ -37,7 +37,7 @@
 			<key>display_name</key>
 			<string>Microsoft Edge</string>
 			<key>description</key>
-			<string>Microsoft&apos;s Edge browser. This is the German version.</string>
+			<string>Microsoft&apos;s Edge browser. This is the English version.</string>
 			<key>category</key>
 			<string>Productivity</string>
 			<key>localized_strings</key>
@@ -49,7 +49,7 @@
 					<key>category</key>
 					<string>Produktivität</string>
 					<key>description</key>
-					<string>Webbrowser Edge von Microsoft.</string>
+					<string>Webbrowser Edge von Microsoft. Dies ist die englische Version.</string>
 				</dict>
 			</dict>
 			<key>name</key>
