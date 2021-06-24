@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>Description</key>
+        <string>Downloads Microsoft Edge and imports into Munki. This recipe is based on com.github.autopkg.munki.MSEdge and customized by wycomco (http://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+        <key>Identifier</key>
+        <string>com.github.wycomco.override.MSEdge</string>
+	<key>Input</key>
+	<dict>
+		<key>CHANNEL</key>
+		<string>Production</string>
+		<key>LOCALE_ID</key>
+		<string>1031</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps</string>
+		<key>NAME</key>
+		<string>app_ms_edge</string>
+		<key>PRODUCT</key>
+		<string>Edge</string>
+		<key>VERSION</key>
+		<string>latest</string>
+		<key>munki_required_update_name</key>
+		<string></string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Microsoft Edge</string>
+				<string>Microsoft Error Reporting</string>
+				<string>Microsoft AutoUpdate</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>developer</key>
+			<string>Microsoft</string>
+			<key>display_name</key>
+			<string>Microsoft Edge</string>
+			<key>description</key>
+			<string>Microsoft&apos;s Edge browser. This is the German version.</string>
+			<key>category</key>
+			<string>Productivity</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>Webbrowser Edge von Microsoft.</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.MSEdge</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>MSOfficeMacURLandUpdateInfoProvider</key>
+			<dict>
+				<key>git_hash</key>
+				<string>f33f7baebfa2312a20b523e4cacaa2fe0b62da98</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacURLandUpdateInfoProvider.py</string>
+				<key>sha256_hash</key>
+				<string>344a3b8034cd7329c24461b5835406f2ea898d08fb9c9c22dcb26651c4c2a9ba</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.MSEdge</key>
+			<dict>
+				<key>git_hash</key>
+				<string>f33f7baebfa2312a20b523e4cacaa2fe0b62da98</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSEdge.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>f32c29e3c01a5105128c6a0473b84f857438f85fe5c080945c17fe5bd59405f8</string>
+			</dict>
+			<key>com.github.autopkg.download.MSOfficeMacProduct</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSOfficeMacProduct.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>9d98baa020cb9228ff75122bdd7b92a20196cedb9f5983c140e7c1e771cf26cf</string>
+			</dict>
+			<key>com.github.autopkg.munki.MSEdge</key>
+			<dict>
+				<key>git_hash</key>
+				<string>f33f7baebfa2312a20b523e4cacaa2fe0b62da98</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/MSOfficeUpdates/MSEdge.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>d14ac6becdbbd09e5d0bd7e97befe92d3883d666069f07459cc36df14ce8fadc</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
