@@ -13,16 +13,20 @@ This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized 
 	<string>com.github.wycomco.override.LibreOffice</string>
 	<key>Input</key>
 	<dict>
+		<key>MUNKI_CATEGORY</key>
+		<string>Productivity</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/libreoffice</string>
 		<key>NAME</key>
 		<string>app_libreoffice</string>
 		<key>RELEASE</key>
 		<string>still</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/libreoffice</string>
-		<key>MUNKI_CATEGORY</key>
-		<string>Productivity</string>
 		<key>pkginfo</key>
 		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>LibreOffice</string>
+			</array>
 			<key>catalogs</key>
 			<array>
 				<string>generic</string>
@@ -31,14 +35,12 @@ This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized 
 			<string>%MUNKI_CATEGORY%</string>
 			<key>description</key>
 			<string>LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base.</string>
-            <key>blocking_applications</key>
-            <array>
-                <string>LibreOffice</string>
-            </array>
+			<key>developer</key>
+			<string>The Document Foundation</string>
+			<key>display_name</key>
+			<string>LibreOffice English version</string>
 			<key>localized_strings</key>
 			<dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -48,13 +50,11 @@ This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized 
 					<key>display_name</key>
 					<string>LibreOffice englisch</string>
 				</dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 			</dict>
-            <key>minimum_os_version</key>
-            <string>10.10.0</string>
-			<key>developer</key>
-			<string>The Document Foundation</string>
-			<key>display_name</key>
-			<string>LibreOffice English version</string>
+			<key>minimum_os_version</key>
+			<string>10.10.0</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -74,11 +74,11 @@ This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized 
 			<key>io.github.hjuutilainen.download.LibreOffice</key>
 			<dict>
 				<key>git_hash</key>
-				<string>83e585bad4496703036b1e85511953d0de58de33</string>
+				<string>45487bf899ebd53e13ee4f902d4a3994d354290e</string>
 				<key>path</key>
 				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/LibreOffice/LibreOffice.download.recipe</string>
 				<key>sha256_hash</key>
-				<string>20387d8fe81b5d189db437c7ab255c22f40637953c88337aa19b78313273ef8a</string>
+				<string>5fbdebb1151b9416e4a1d8ccdc873d9c985e795f2726aa1c3537afa595bb3f8e</string>
 			</dict>
 			<key>io.github.hjuutilainen.munki.LibreOffice</key>
 			<dict>
