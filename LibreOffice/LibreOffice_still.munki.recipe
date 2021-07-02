@@ -10,23 +10,19 @@ LibreOffice Fresh is the stable version with the most recent features. Users int
 
 This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
-	<string>com.github.wycomco.override.LibreOffice</string>
+	<string>com.github.wycomco.override.LibreOffice_still</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_CATEGORY</key>
-		<string>Productivity</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>generic/apps/libreoffice</string>
 		<key>NAME</key>
-		<string>app_libreoffice</string>
+		<string>app_libreoffice_still</string>
 		<key>RELEASE</key>
 		<string>still</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/libreoffice</string>
+		<key>MUNKI_CATEGORY</key>
+		<string>Productivity</string>
 		<key>pkginfo</key>
 		<dict>
-			<key>blocking_applications</key>
-			<array>
-				<string>LibreOffice</string>
-			</array>
 			<key>catalogs</key>
 			<array>
 				<string>generic</string>
@@ -35,12 +31,14 @@ This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized 
 			<string>%MUNKI_CATEGORY%</string>
 			<key>description</key>
 			<string>LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base.</string>
-			<key>developer</key>
-			<string>The Document Foundation</string>
-			<key>display_name</key>
-			<string>LibreOffice English version</string>
+            <key>blocking_applications</key>
+            <array>
+                <string>LibreOffice</string>
+            </array>
 			<key>localized_strings</key>
 			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
 				<key>de</key>
 				<dict>
 					<key>category</key>
@@ -50,13 +48,15 @@ This recipe is based on io.github.hjuutilainen.munki.LibreOffice and customized 
 					<key>display_name</key>
 					<string>LibreOffice englisch</string>
 				</dict>
-				<key>fallback_locale</key>
-				<string>en</string>
 			</dict>
-			<key>minimum_os_version</key>
-			<string>10.10.0</string>
+			<key>developer</key>
+			<string>The Document Foundation</string>
+			<key>display_name</key>
+			<string>LibreOffice</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>icon_name</key>
+			<string>app_libreoffice</string>
 			<key>unattended_install</key>
 			<true/>
 			<key>unattended_uninstall</key>

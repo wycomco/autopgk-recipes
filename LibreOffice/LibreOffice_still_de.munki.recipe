@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the current release version of LibreOffice and imports into Munki. Set RELEASE to either "fresh" or "still".
+
+This recipe is based on com.github.sebtomasi.munki.LibreOfficeLangPack and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
+	<key>Identifier</key>
+	<string>com.github.wycomco.override.LibreOffice_still_de</string>
+	<key>Input</key>
+	<dict>
+		<key>LANGUAGE_CODE</key>
+		<string>de</string>
+		<key>NAME</key>
+		<string>app_libreoffice_still_de</string>
+		<key>MUNKI_CATEGORY</key>
+		<string>Productivity</string>
+		<key>RELEASE</key>
+		<string>still</string>
+		<key>TYPE</key>
+		<string>mac-x86_64</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>generic/apps/libreoffice</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>LibreOffice</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>generic</string>
+			</array>
+			<key>description</key>
+			<string>LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. This is the German version.</string>
+			<key>localized_strings</key>
+			<dict>
+				<key>fallback_locale</key>
+				<string>en</string>
+				<key>de</key>
+				<dict>
+					<key>category</key>
+					<string>Produktivität</string>
+					<key>description</key>
+					<string>LibreOffice ist eine freie Zusammenstellung gebräuchlicher Software für Arbeiten im Büro. Dazu gehören Programme zur Textverarbeitung, Tabellenkalkulation, Präsentation und zum Erstellen von Zeichnungen.</string>
+					<key>display_name</key>
+					<string>LibreOffice deutsch</string>
+				</dict>
+			</dict>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>developer</key>
+			<string>The Document Foundation</string>
+			<key>icon_name</key>
+			<string>app_libreoffice_de</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.sebtomasi.munki.LibreOfficeLangPack</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>com.github.sebtomasi.SharedProcessors/RenameVar</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c173a762d8a25be6c024f6f73f3153f4307b8061</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.sebtomasi-recipes/SharedProcessors/RenameVar.py</string>
+				<key>sha256_hash</key>
+				<string>125e4497f0b2150de3f7066d98f9207d9c3cafa0a5e2459266b1da4e39d49386</string>
+			</dict>
+			<key>com.github.sebtomasi.SharedProcessors/TextSubstituer</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c173a762d8a25be6c024f6f73f3153f4307b8061</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.sebtomasi-recipes/SharedProcessors/TextSubstituer.py</string>
+				<key>sha256_hash</key>
+				<string>8c6db877a5069c8508e4abbc4f8f2a98fa47f6e2c51ad7a58ad338c86df6f470</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.sebtomasi.download.LibreOfficeLangPack</key>
+			<dict>
+				<key>git_hash</key>
+				<string>419054955769597bf08a2e2a149f78402cded1a6</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.sebtomasi-recipes/LibreOffice/LibreOfficeLangPack.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>23913e24ee9a04956debb8f61224381f126bae89b36ed433ed8078dfa34acd15</string>
+			</dict>
+			<key>com.github.sebtomasi.munki.LibreOfficeLangPack</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c86feab62bd0234a22ab85f6d5ba2deb3fc3196c</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.sebtomasi-recipes/LibreOffice/LibreOfficeLangPack.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>b5d848d21e7edbe8704a4be1e85c3d4f223fdde0e7c824295408bf3870ee2257</string>
+			</dict>
+			<key>com.github.sebtomasi.pkg.LibreOfficeLangPack</key>
+			<dict>
+				<key>git_hash</key>
+				<string>6ce4d4417798d34bd20d0280c703516b3d15be5d</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.sebtomasi-recipes/LibreOffice/LibreOfficeLangPack.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>b96fbf7f5ceae1831e2efc778c8aaa910aeef841a67990a50d53a80a3b532d33</string>
+			</dict>
+			<key>io.github.hjuutilainen.download.LibreOffice</key>
+			<dict>
+				<key>git_hash</key>
+				<string>45487bf899ebd53e13ee4f902d4a3994d354290e</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes/LibreOffice/LibreOffice.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>5fbdebb1151b9416e4a1d8ccdc873d9c985e795f2726aa1c3537afa595bb3f8e</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
