@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads Firefox disk image and imports into Munki. This recipe is based on com.github.autopkg.munki.firefox-rc-en_US and customized by wycomco (https://www.wycomco.de) to support a different naming convention for munki and German as a default language.</string>
 	<key>Identifier</key>
-	<string>com.github.wycomco.override.firefox-en-US</string>
+	<string>com.github.wycomco.override.firefox_en-US</string>
 	<key>Input</key>
 	<dict>
 		<key>LOCALE</key>
@@ -16,6 +16,8 @@
 		<string>app_firefox_en</string>
 		<key>RELEASE</key>
 		<string>latest</string>
+		<key>force_munkiimport</key>
+		<true />
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
