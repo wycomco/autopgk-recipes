@@ -16,8 +16,6 @@
 		<string>app_firefox_en</string>
 		<key>RELEASE</key>
 		<string>latest</string>
-		<key>force_munkiimport</key>
-		<true />
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
